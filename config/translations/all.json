@@ -1,7 +1,4 @@
 {
-  "db": "mongodb://localhost/kooditunti_production",
-  "root": "<your code folder here>",
-  "locale": "en_US",
   "translations": {
 	"fi_FI": {
 		"test": "test",
