@@ -7,7 +7,7 @@
     initDone = true
     $(document).foundation joyride:
       modal: false
-      default_prev_button_text: 'palaa edelliseen'
+      default_prev_button_text: L.translations['return_to_previous']
       pre_step_callback: (i, step) ->
         # show modal on first step
         if i is 0
@@ -107,7 +107,7 @@
     jrtg+= 'data-index="0" style="visibility: visible; display: block;'
     jrtg+= 'top: '+pos[1]+'px; left: '+pos[0]+'px;">'
     jrtg+= '<span class="joyride-nub left"></span><div class="joyride-content-wrapper normal-padding">'
-    jrtg+= '<p>Tuplaklikkaa palikkaa näyttääksesi sen kokonaan</p>'
+    jrtg+= '<p>' + L.translations['doubleclick_the_block_to_see_it']+ '</p>'
     jrtg+= '<a href="javascript:void(0)" class="small button joyride-next-tip-custom close-btn">Sulje</a><a href="javascript:void(0)" class="joyride-close-tip close-btn">×</a></div></div>'
     $('body').append(jrtg)
     $("#guide-modal .close-btn").click ->
@@ -120,7 +120,7 @@
     jrtg+= 'top: '+pos[1]+'px; left: '+pos[0]+'px;">'
     jrtg+= '<span class="joyride-nub left"></span><div class="joyride-content-wrapper normal-padding">'
     jrtg+= '<p>'+msg+'</p>'
-    jrtg+= '<a href="javascript:void(0)" class="small button joyride-next-tip-custom close-btn">Sulje</a><a href="javascript:void(0)" class="joyride-close-tip close-btn">×</a></div></div>'
+    jrtg+= '<a href="javascript:void(0)" class="small button joyride-next-tip-custom close-btn">' + L.translations['close_tooltip'] + '</a><a href="javascript:void(0)" class="joyride-close-tip close-btn">×</a></div></div>'
     $('body').append(jrtg)
     $("#guide-modal .close-btn").click ->
       $("#guide-modal").remove()
@@ -128,8 +128,8 @@
   retryDialog: (cb) ->
     jrtg = '<div id="guide-modal" class="joyride-tip-guide" data-index="0" style="visibility: visible; display: block; width: 375px;">'
     jrtg+= '<div class="joyride-content-wrapper normal-padding" style="text-align: center;">'
-    jrtg+= '<p style="font-size:25px;">Harmi, tehtävä ei mennyt läpi.</p>'
-    jrtg+= '<a href="#" class="small button close-btn">Jatka yrittämistä</a>'
+    jrtg+= '<p style="font-size:25px;">' + L.translations['exercise_not_complete_message'] + '</p>'
+    jrtg+= '<a href="#" class="small button close-btn">' + L.translations['keep_trying_btn_caption'] + '</a>'
     jrtg+= '<a href="#close" class="joyride-close-tip-custom close-btn">×</a></div></div>'
     jrtg+= '<div class="joyride-modal-bg" style="display: block;"></div>'
     $('body').append(jrtg)
@@ -165,15 +165,15 @@
     jrtg+= '<div class="animated tada" style="width:30%;float:left;margin-top:15px;"><img src="/img/star.png"></div>'
     jrtg+= '<div class="animated tada" style="width:40%;float:left;"><img src="/img/star.png"></div>'
     jrtg+= '<div class="animated tada" style="width:30%;float:left;margin-top:15px;"><img src="/img/star.png"></div>'
-    jrtg+= '</div><p style="font-size:25px;">Hienoa, ratkaisit tehtävän!</p>'
+    jrtg+= '</div><p style="font-size:25px;">' + L.translations['great_work_exercise_solved'] + '</p>'
     if Exercises.isLastLevel
-      btnText = "Palaa harjoitusvalikkoon"
+      btnText = L.translations['return_to_exercise_menu']
       btnHref = "/"
     else
-      btnText = "Siirry seuraavaan tehtävään"
+      btnText = L.translations['goto_next_exercise']
       btnHref = Exercises.nextLevelPath()
     window.getEvaluationID = (-> return Exercises.currentID)
-    es = "<iframe src='/exercise-evaluation.html#white' id='exercise-evaluation'></iframe>"
+    es = "<iframe src='/exercise-evaluation-" + L.translations['locale'] + ".html#white' id='exercise-evaluation'></iframe>"
     jrtg+= es
     jrtg+= '<a href="'+btnHref+'" class="small button joyride-next-tip-custom close-btn">'+btnText+'</a>'
     jrtg+= '<a href="#close" class="joyride-close-tip close-btn">×</a></div></div>'
@@ -198,9 +198,9 @@
     $('#evaluation-selects').find('div').each ->
       evlRow = $("<div class='evaluation-row' />").append $('<span />').text($(@).text())
       evlSel = $("<select />")
-      evlSel.append $('<option value="empty" />').html(' &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ------- klikkaa ja valitse -------')
-      evlSel.append $('<option value="yes" />').text("Kyllä, mielestäni tämä pitää paikkansa.")
-      evlSel.append $('<option value="no" />').text("Hups! Jatkan vielä tehtävän tekemistä.")
+      evlSel.append $('<option value="empty" />').html(L.translations['evaluation_option_empty'])
+      evlSel.append $('<option value="yes" />').text(L.translations['evaluation_option_yes'])
+      evlSel.append $('<option value="no" />').text(L.translations['evaluation_option_no'])
       evlRow.append evlSel
       gmEvlSelW.append evlRow
 
@@ -242,8 +242,8 @@
     jrtg+= '  <span class="joyride-nub top"></span>'
     jrtg+= '  <div class="joyride-content-wrapper normal-padding">'
     jrtg+= $(".task-overview").html()
-    jrtg+= '<a class="action restart-joyride right">näytä koko ohjeistus uudelleen</a>' if Exercises.currentName isnt "playground"
-    jrtg+= '<a class="action solution-viewer right">vilkaise ratkaisua</a>' if Exercises.hasSolution
+    jrtg+= '<a class="action restart-joyride right">' + L.translations['show_help_again'] + '</a>' if Exercises.currentName isnt "playground"
+    jrtg+= '<a class="action solution-viewer right">' + L.translations['peek_at_the_solution'] + '</a>' if Exercises.hasSolution
     jrtg+= '  </div>'
     jrtg+= '</div>'
     $('body').append(jrtg)
@@ -252,7 +252,7 @@
       JediMaster.startTour()
     $("#exercise-help .solution-viewer").click ->
       $("#exercise-help").remove()
-      message = "Tämän olisi syytä olla aivan viimeinen keino jos et pääse eteenpäin. Oletko varma ettet saa tehtävää ratkaistua itse tai avun kanssa?"
+      message = L.translations['peek_notification']
       JediMaster.solutionViewer() if confirm message
     #$("#exercise-help").mouseover ->
       #console.log "mouseover"

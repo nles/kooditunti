@@ -1,0 +1,34 @@
+<xml id="toolbox" style="display: none">
+  <category name="Events">
+    <block type="when_pressed"></block>
+    <block type="when_clicked"></block>
+  </category>
+  <category name="Elements">
+    <block type="circle_element">
+      <field name="name">ball</field>
+    </block>
+  </category>
+  <category name="Variables">
+    <!--<block type="create_slider"></block>-->
+    <block type="variables_set"></block>
+    <block type="variables_get"></block>
+  </category>
+  <category name="Text">
+    <block type="text_element">
+      <value name="text">
+      </value>
+    </block>
+    <block type="text">
+    </block>
+    <block type="text_join">
+      <value name="ADD0">
+      </value>
+    </block>
+  </category>
+  <category name="Numbers">
+    <block type="math_arithmetic"></block>
+    <block type="math_number">
+      <field name="NUM">50</field>
+    </block>
+  </category>
+</xml>

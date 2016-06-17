@@ -1,0 +1,32 @@
+<xml>
+    <block type="variables_set" id="23" inline="true" x="52" y="34">
+        <field name="VAR">answer</field>
+        <value name="VALUE">
+            <block type="math_number" id="24">
+                <field name="NUM">50</field>
+            </block>
+        </value>
+        <next>
+            <block type="variables_set" id="25" inline="true">
+                <field name="VAR">guess</field>
+                <value name="VALUE">
+                    <block type="prompt" id="26" inline="false">
+                        <value name="text">
+                            <block type="text" id="27">
+                                <field name="TEXT">What equals 25 + 25?</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+            </block>
+        </next>
+    </block>
+    <block type="controls_if" id="28" inline="false" x="51" y="138">
+        <mutation else="1"/>
+        <value name="IF0">
+            <block type="logic_compare" id="29" inline="true">
+                <field name="OP">EQ</field>
+            </block>
+        </value>
+    </block>
+</xml>

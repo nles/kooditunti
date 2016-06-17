@@ -18,188 +18,99 @@
 {% block exercise_tips %}
 {% if level == 1 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-    <p>Tässä tehtävässä tutustutaan muuttujaan.</p>
-    <p>Ohjelmoinnissa muuttujia
-    käytetään minkä tahansa <strong>arvon varastoimiseen</strong>. Muuttujan arvo voi olla esimerkiksi luku
-    tai teksti.</p>
-    <p>Kun muuttujalle on annettu jokin arvo, voidaan muuttujaan viittaamalla palauttaa sen arvo niin monta kertaa kuin halutaan.</p>
-  <!--<p>Tehtävänäsi on määritellä muuttuja <strong>pallon_halkaisija</strong> ja antaa sille jokin arvo.</p>-->
+  {% autoescape false %}{{ exercises_vars_level1_task_overview }}{% endautoescape %}
 </div>
-<!--<div id="tip-set-var" class="exercise-tip-placement" style="top:10px;left:0px;width:150px;"></div>-->
-<!--<div id="tip-get-var" class="exercise-tip-placement" style="top:70px;left:0px;width:150px;"></div>-->
 <div id="tip-set" class="exercise-tip-placement" style="top:65px;left:340px"></div>
 <div id="tip-name" class="exercise-tip-placement" style="top:70px;left:380px"></div>
 <div id="tip-set2" class="exercise-tip-placement" style="top:150px;left:330px"></div>
 <div id="tip-get" class="exercise-tip-placement" style="top:230px;left:460px"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide hide-modal-next" data-options="prev_button: false">
-    <h2>Muuttujat</h2>
-    <p>Muuttuja on yksi tärkeimpiä ohjelmoinnin peruskäsitteitä.</p>
-    <p>Ohjelmoinnissa muuttujia
-    käytetään minkä tahansa <strong>arvon varastoimiseen</strong>. Muuttujan arvo voi olla esimerkiksi luku
-    tai teksti.</p>
-    <p>Kun muuttujalle on annettu jokin arvo, voidaan muuttujaan viittaamalla palauttaa sen arvo niin monta kertaa kuin halutaan.</p>
+  <li data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false">
+    {% autoescape false %}{{ exercises_vars_level1_modal1 }}{% endautoescape %}
   </li>
-  <li data-id="tip-set" data-button="Seuraava" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true">
-    <p>Muuttujalle <strong>asetetaan arvo</strong> tämän näköisellä palikalla</p>
-    <p>Kohta jossa lukee "lempiruokani" kertoo mikä on muuttujan nimi. Klikkaamalla nimestä pystyt vaihtamaan sen.</p>
+  <li data-id="tip-set" data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true">
+    {% autoescape false %}{{ exercises_vars_level1_modal2 }}{% endautoescape %}
   </li>
-  <li data-id="tip-name" data-button="Seuraava" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true">
-    <p>Muuttujan nimen voi valita vapaasti, mutta yleensä on tapana nimetä muuttuja niin, että nimestä käy ilmi minkälaisen arvon muuttuja sisältää.</p>
-    <strong>Muutama esimerkki:</strong><br />
-    <img src="/img/exercises/vars/example_var1.png" /><br />
-    <img src="/img/exercises/vars/example_var2.png" />
+  <li data-id="tip-name" data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true">
+    {% autoescape false %}{{ exercises_vars_level1_modal3 }}{% endautoescape %}
   </li>
-  <li data-id="tip-get" data-button="Seuraava" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true">
-    <p><i>Kun muuttujan arvo on asetettu</i>, voidaan tämän näköisellä palikalla <strong>palauttaa muuttujaan asetettu arvo</strong>.</p>
-    <p>Myös tässä palikassa voit klikata muuttujan nimeä ja valita minkä muuttujan arvon haluat palauttaa.</p>
+  <li data-id="tip-get" data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true">
+    {% autoescape false %}{{ exercises_vars_level1_modal4 }}{% endautoescape %}
   </li>
   <li data-id="start-execution-btn" class="wide hide-modal-next" data-options="tip_location: top; prev_button: true; next_button: false">
-    <p>Pohdi hetki mitä mielestäsi tapahtuu kun suoritat tämän ohjelman.</p>
-    <p>Kun sinulla on joku käsitys siitä mitä voisi tapahtua, suorita koodi.</p>
+    {% autoescape false %}{{ exercises_vars_level1_modal5 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Vars.resumeTourAfterExecution()"></div>
   </li>
-  <li data-id="end-execution-btn" data-button="Seuraava" class="wide hide-modal-next" data-options="tip_location: top; prev_button: true;">
-    <p>Tapahtuiko suoritettaessa niin kuin oletit?</p>
-    <p>Jos tapahtui jotain muuta, yritä vielä pohdiskella mistä se voisi johtua. Siirry ohjeissa seuraavaan niin kerron vastauksen.</p>
+  <li data-id="end-execution-btn" data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="tip_location: top; prev_button: true;">
+    {% autoescape false %}{{ exercises_vars_level1_modal6 }}{% endautoescape %}
   </li>
-  <li data-id="tip-set" data-button="Seuraava" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true;">
-    <p>Muista että koodia suoritetaan <strong>ylhäältä alas</strong>.</p>
-    <p>Ensin siis asetetaan muuttujan "Lempiruokani" arvoksi "Hampurilaiset".</p>
+  <li data-id="tip-set" data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true;">
+    {% autoescape false %}{{ exercises_vars_level1_modal7 }}{% endautoescape %}
   </li>
-  <li data-id="tip-set2" data-button="Seuraava" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true;">
-    <p>Tämän jälkeen asetetaan kuitenkin samannimisen muuttujan arvoksi "Kalapyörykät". Edellinen arvo siis korvataan tällä uudella.</p>
+  <li data-id="tip-set2" data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true;">
+    {% autoescape false %}{{ exercises_vars_level1_modal8 }}{% endautoescape %}
   </li>
-  <li data-id="tip-get" data-button="Seuraava" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true;">
-    <p>Viimeinen arvo minkä ohjelma tälle muuttujalle on antanut on "Kalapyörykät", eli se siis piirretään kentälle.</p>
+  <li data-id="tip-get" data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="tip_location: bottom; prev_button: true;">
+    {% autoescape false %}{{ exercises_vars_level1_modal9 }}{% endautoescape %}
   </li>
   <li data-button="OK!" class="wide hide-modal-next" data-options="tip_location: left; prev_button: true;">
-    <p>Voit vielä jatkaa muuttujien kanssa testailua esimerkiksi luomalla nämä muuttujat:</p>
-    <img src="/img/exercises/vars/example_var1.png" /><br />
-    <img src="/img/exercises/vars/example_var2.png" />
-    <p>Ja tietysti voit keksiä myös omia muuttujia! Klikkaa "arvoi suoritus" kun olet valmis siirtymään seuraavaan tehtävään.</p>
+    {% autoescape false %}{{ exercises_vars_level1_modal10 }}{% endautoescape %}
   </li>
-  <!--<li data-id="tip-set-var" class="wide" data-button="Seuraava" data-options="tip_location: left; prev_button: true">-->
-    <!--<p>Tällä palikalla pystyt luomaan uuden muuttujan. Pudotusvalikosta pystyt määrittämään muuttujan nimen,-->
-    <!--ja tyhjään kohtaan asetetaan muuttujan uusi arvo.</p>-->
-    <!--<p>Muuttujan nimen voi määrittää vapaasti, mutta yleensä on tapana käyttää jotain kuvaavaa (esimerkiksi jos muuttujasi sisältää-->
-    <!--käyttäjän hiiren klikkausten määrän, voisi sen nimi olla "klikkauksia")</p>-->
-  <!--</li>-->
-  <!--<li data-id="tip-get-var" class="wide" data-button="Seuraava" data-options="tip_location: left; prev_button: true">-->
-    <!--<p>Tämä palikka palauttaa pudotusvalikosta valitun muuttujan arvon.</p>-->
-    <!--<p>Muuttujaan tallennettu arvo on käytettävissä koko ohjelman suorituksen ajan, sen jälkeen kun muuttujan arvo on asetettu (ylempi palikka).</p>-->
-    <!--<p>Muuttujan arvoa pystyy myös muuttamaan ohjelman suorituksen aikana yksinkertaisesti asettamalla sille uusi arvo.</p>-->
-  <!--</li>-->
-  <!--<li data-id="tip-code" class="wide hide-modal-next" data-button="Seuraava" data-options="prev_button: true; tip_location: top;">-->
-    <!--<p>Tässä tehtävässä osa ohjelmakoodista on jo valmiina, mutta ohjelma ei kuitenkaan vielä toimi, koska muuttujaa nimeltään-->
-    <!--<strong>pallon_halkaisija</strong> ei ole määritelty.</p>-->
-  <!--</li>-->
-  <!--<li data-button="Aloita">-->
-    <!--[><p>Tehtävänäsi on määritellä tämä puuttuva muuttuja ja antaa sille jokin arvo.</p><]-->
-    <!--<p>Tehtävänäsi on määritellä muuttuja <strong>pallon_halkaisija</strong> ja antaa sille jokin arvo.</p>-->
-  <!--</li>-->
 </ol>
 <div id="evaluation-selects">
-  <div>Osaan käyttää muuttujia.</div>
+  <div>{{ i_know_how_to_use_variables }}</div>
 </div>
 {% endif %}
 
 {% if level == 2 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Tehtävänäsi on määritellä muuttuja <strong>"Pallon halkaisija"</strong> ja antaa sille jokin arvo.</p>
+{% autoescape false %}{{ exercises_vars_level2_task_overview }}{% endautoescape %}
 </div>
 
 <div id="tip-code" class="exercise-tip-placement" style="top:230px;left:330px"></div>
 <div id="tip-varblock" class="exercise-tip-placement" style="top:5px;left:0px;width:170px;"></div>
-<!--<div id="tip1" class="exercise-tip-placement" style="top:120px;left:0px;width:150px;"></div>-->
-<!--<div id="tip1-5" class="exercise-tip-placement" style="top:180px;left:0px;width:150px;"></div>-->
-<!--<div id="tip2" class="exercise-tip-placement" style="top:245px;left:0px;width:150px;"></div>-->
-<!--<div id="tip3" class="exercise-tip-placement" style="top:5px;left:0px;width:150px;"></div>-->
-<!--<div id="tip4" class="exercise-tip-placement" style="top:124px;left:400px;"></div>-->
 
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava">
-    <h2>Lisää muuttujista</h2>
-    <p>Tutustutaan muuttujiin tarkemmin</p>
-    <!--<p>Tehtävänäsi on määritellä tämä puuttuva muuttuja ja antaa sille jokin arvo.</p>-->
-    <!--<p>Tehtävänäsi on määritellä muuttuja <strong>pallon_halkaisija</strong> ja antaa sille jokin arvo.</p>-->
+  <li data-button="{{ next_button_caption }}">
+    {% autoescape false %}{{ exercises_vars_level2_modal1 }}{% endautoescape %}
   </li>
-  <li data-id="tip-code" class="wide" data-button="Seuraava" data-options="prev_button: true; tip_location: top;">
-    <p>Tässä tehtävässä osa ohjelmakoodista on jo valmiina. Suoritettaessa ohjelman pitäisi luoda kolme samankokoista palloa</p>
-    <p>ohjelma ei kuitenkaan vielä toimi, koska muuttujaa nimeltään <strong>"Pallon halkaisija"</strong> ei ole määritelty.</p>
+  <li data-id="tip-code" class="wide" data-button="{{ next_button_caption }}" data-options="prev_button: true; tip_location: top;">
+    {% autoescape false %}{{ exercises_vars_level2_modal2 }}{% endautoescape %}
   </li>
-  <li data-button="Seuraava">
-    <!--<p>Tehtävänäsi on määritellä tämä puuttuva muuttuja ja antaa sille jokin arvo.</p>-->
-    <p>Tehtävänäsi on määritellä puuttuva muuttuja nimeltään <strong>"Pallon halkaisija"</strong> ja antaa sille sopiva arvo.</p>
+  <li data-button="{{ next_button_caption }}">
+    {% autoescape false %}{{ exercises_vars_level2_modal3 }}{% endautoescape %}
   </li>
-  <li data-button="Aloita" data-id="tip-varblock" data-button="Seuraava" data-options="prev_button: true; tip_location: right;">
-    <!--<p>Tehtävänäsi on määritellä tämä puuttuva muuttuja ja antaa sille jokin arvo.</p>-->
-    <p>Muista että voit vaihtaa muuttujan nimen klikkaamalla siitä!</p>
+  <li data-button="OK!" data-id="tip-varblock" data-button="{{ next_button_caption }}" data-options="prev_button: true; tip_location: right;">
+    {% autoescape false %}{{ exercises_vars_level2_modal4 }}{% endautoescape %}
   </li>
-
-  <!--<li data-button="Seuraava" class="wide hide-modal-next" data-options="prev_button: false;">-->
-    <!--<h2>Tekstiä kentälle</h2>-->
-    <!--<p>Tässä tehtävässä tutustutaan tekstin piirtämiseen kentälle.</p>-->
-    <!--[><p>Pystyt myös luomaan useampia tekstinpätkiä jotka näytetään peräkkäin.</p><]-->
-    <!--[>  Voit vapaasti käyttää esiteltyjä palikoita tekstin piirtämiseen kentälle. <]-->
-  <!--</li>-->
-  <!--<li data-id="tip1" data-button="Seuraava" data-options="tip_location: right; prev_button: true;">-->
-    <!--<p>Tällä palikalla pystyt luomaan uutta tekstiä.</p>-->
-  <!--</li>-->
-  <!--<li data-id="tip1-5" data-button="Seuraava" data-options="tip_location: left; prev_button: true">-->
-    <!--<p>Kun yhdistät tähän palikkaan kaksi muuta palikkaa, niiden teksti yhdistetään toisiinsa. Voit käyttää myös muuttujia tekstin lähteenä.</p>-->
-  <!--</li>-->
-  <!--<li data-id="tip2" data-button="Seuraava" data-options="tip_location: right; prev_button: true;">-->
-    <!--<p>Tarvitset tätä palikkaa siihen että teksti piirtyy kentälle.</p>-->
-  <!--</li>-->
-  <!--<li data-id="tip3" data-button="Seuraava" data-options="tip_location: right; prev_button: true;">-->
-    <!--<p>Pystyt myös käyttämään edellisellä tasolla opittuja muuttujia tekstin kanssa.</p>-->
-  <!--</li>-->
-  <!--<li data-id="tip4" data-button="Sulje ohje" data-options="tip_location: right; prev_button: true;">-->
-    <!--<p>Tämä on vain esimerkki. Käytä vapaasti mielikuvitustasi ja kirjoita jotain omaa!</p>-->
-  <!--</li>-->
 </ol>
 <div id="evaluation-selects">
-  <div>Sain kentälle piirrettyä omaa tekstiäni</div>
-  <div>Testasin useamman tekstinpätkän lisäämistä peräkkäin</div>
-  <div>Onnistuin käyttämään muuttujia tekstin säilömiseen</div>
+  <div>{{ i_could_draw_my_own_text_to_the_grid }}</div>
+  <div>{{ i_tried_catenation_of_multiple_text_snippets }}</div>
+  <div>{{ i_managed_to_store_text_in_the_variables }}</div>
 </div>
 {% endif %}
 
 {% if level == 3 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Luo kentälle teksti joka kertoo kuinka monta kertaa jotain näppäimistön näppäintä on painettu.</p>
-  <p><strong>Vinkit:</strong><br />
-  <ul>
-    <li>Aluksi näppäimistön painalluksia on nolla.</li>
-    <li>Kun näppäintä painetaan, haluat kasvattaa painallusten määrää yhdellä.</li>
-    <li>Käytä <img src="/img/exercises/vars/arith.png" /> -palikkaa arvon kasvattamiseen</li>
-  </p>
+{% autoescape false %}{{ exercises_vars_level3_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-when" class="exercise-tip-placement" style="top:190px;left:170px;"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide" data-options="prev_button: false;">
-    <h2>Muuttuva muuttuja</h2>
-    <p>Edellisillä tasoilla opit käyttämään muuttujia. Tässä tehtävässä pääset luomaan muuttujia käyttäen kentälle muuttuvaa tekstiä!</p>
+  <li data-button="{{ next_button_caption }}" class="wide" data-options="prev_button: false;">
+    {% autoescape false %}{{ exercises_vars_level3_modal1 }}{% endautoescape %}
     <div class="after-step-method" style="display:none" data-exec="Exercises.openFirstCategory()"></div>
   </li>
-  <li data-id="tip-when" data-button="Seuraava" class="wide" data-options="prev_button: true;">
-    <p>Kertaa harjoitus "Koordinaatisto ja tapahtumat" jos et muista miten tapahtuma-elementti toimii.</p>
+  <li data-id="tip-when" data-button="{{ next_button_caption }}" class="wide" data-options="prev_button: true;">
+    {% autoescape false %}{{ exercises_vars_level3_modal2 }}{% endautoescape %}
   </li>
-  <li data-button="Aloita" class="wide">
-    <p><strong>Tehtävä:</strong> luo kentälle teksti joka kertoo kuinka monta kertaa jotain näppäimistön näppäintä on painettu.</p>
-    <p>Tehtävä on hieman edellisiä hankalampi, joten kannattaa aloittaa ihan
-    vaikka sillä että saat jotain tapahtumaan kun valitsemaasi näppäintä painetaan, ja vasta
-    sen jälkeen miettiä miten saisit laskettua painallusten määrän.</p>
-    <p>Saat lisävinkkejä klikkaamalla vasemmalla ylhäällä olevaa kysymysmerkkiä</p>
+  <li data-button="{{ start_button_caption }}" class="wide">
+    {% autoescape false %}{{ exercises_vars_level3_modal3 }}{% endautoescape %}
   </li>
 </ol>
 <div id="evaluation-selects">
-  <div>Sain piirrettyä kentälle tekstiä</div>
-  <div>Kun valitsemaani näppäintä painetaan, näytetään kentällä painallusten määrä.</div>
+  <div>{{ i_could_draw_text_on_the_grid }}</div>
+  <div>{{ when_selected_button_is_pressed_the_amount_is_displayed }}</div>
 </div>
 {% endif %}
 

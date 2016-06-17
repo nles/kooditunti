@@ -33,11 +33,11 @@ Blockly.JavaScript["coordinate_array"] = (block) ->
 
 Blockly.Blocks["get_element_property"] = init: ->
   @setColour(230);
-  properties = [["X-koordinaatti","xcoord"],["Y-koordinaatti","ycoord"]]
-  @appendDummyInput().setAlign(Blockly.ALIGN_LEFT).appendField "palauta elementin"
+  properties = [[L.translations['x_coordinate'],"xcoord"],[L.translations['y_coordinate'],"ycoord"]]
+  @appendDummyInput().setAlign(Blockly.ALIGN_LEFT).appendField L.translations['return_for_element_before']
     .appendField new Blockly.FieldDropdown(CodeArea.settableElementsDropdownValues()), "element"
-  @appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField "ominaisuus"
-    .appendField new Blockly.FieldDropdown($.merge([["[valitse]","0"]],properties)), "property"
+  @appendDummyInput().setAlign(Blockly.ALIGN_RIGHT).appendField L.translations['return_for_element_after']
+    .appendField new Blockly.FieldDropdown($.merge([[L.translations['select_brackets'],"0"]],properties)), "property"
   @setOutput(true, "Array");
   #@setInputsInline(false);
 
@@ -51,7 +51,7 @@ Blockly.JavaScript["get_element_property"] = (block) ->
 Blockly.Blocks["text_element"] =
   init: ->
     @setColour 120
-    @appendValueInput("text").setAlign(Blockly.ALIGN_RIGHT).appendField "Piirrä teksti"
+    @appendValueInput("text").setAlign(Blockly.ALIGN_RIGHT).appendField L.translations['draw_text']
       .setCheck(['String','Number'])
     @setPreviousStatement true
     @setNextStatement true
@@ -73,33 +73,33 @@ elementBase = (text,mutators) ->
     #@appendValueInput("name").appendField "Luo nelikulmio"
     @appendDummyInput()
       .appendField text
-      .appendField(new Blockly.FieldTextInput("[nimeltään]"), "name")
+      .appendField(new Blockly.FieldTextInput(L.translations['called_brackets']), "name")
     @setPreviousStatement true
     @setNextStatement true
     @setTooltip ""
     @setMutator(new Blockly.Mutator(mutators)); # ,'color_mutator' TODO
     @extraProperties = []
 
-Blockly.Blocks["rectangle_element"] = elementBase('Luo nelikulmio',['position_mutator','width_mutator','height_mutator'])
+Blockly.Blocks["rectangle_element"] = elementBase(L.translations['create_rectangle'],['position_mutator','width_mutator','height_mutator'])
 Blockly.Blocks["rectangle_element"] = $.extend Blockly.Blocks["rectangle_element"], BlocklyExtraPropertiesPatch._i()
 
-Blockly.Blocks["circle_element"] = elementBase('Luo ympyrä',['position_mutator','radius_mutator'])
+Blockly.Blocks["circle_element"] = elementBase(L.translations['create_ball'],['position_mutator','radius_mutator'])
 Blockly.Blocks["circle_element"] = $.extend Blockly.Blocks["circle_element"], BlocklyExtraPropertiesPatch._i()
 
-Blockly.Blocks["small_circle_element"] = elementBase('Luo pieni ympyrä',['position_mutator','radius_mutator'])
+Blockly.Blocks["small_circle_element"] = elementBase(L.translations['create_small_ball'],['position_mutator','radius_mutator'])
 Blockly.Blocks["small_circle_element"] = $.extend Blockly.Blocks["small_circle_element"], BlocklyExtraPropertiesPatch._i()
 
-Blockly.Blocks["medium_circle_element"] = elementBase('Luo keskikokoinen ympyrä',['position_mutator','radius_mutator'])
+Blockly.Blocks["medium_circle_element"] = elementBase(L.translations['create_medium_ball'],['position_mutator','radius_mutator'])
 Blockly.Blocks["medium_circle_element"] = $.extend Blockly.Blocks["medium_circle_element"], BlocklyExtraPropertiesPatch._i()
 
-Blockly.Blocks["big_circle_element"] = elementBase('Luo iso ympyrä',['position_mutator','radius_mutator'])
+Blockly.Blocks["big_circle_element"] = elementBase(L.translations['create_large_ball'],['position_mutator','radius_mutator'])
 Blockly.Blocks["big_circle_element"] = $.extend Blockly.Blocks["big_circle_element"], BlocklyExtraPropertiesPatch._i()
 
 Blockly.Blocks["edit_element"] =
   init: ->
     @setColour 120
     @appendDummyInput("name")
-      .appendField "Muokkaa elementtiä"
+      .appendField L.translations['alter_element']
       .appendField new Blockly.FieldDropdown(CodeArea.settableElementsDropdownValues), "element"
     @setPreviousStatement true
     @setNextStatement true

@@ -1,0 +1,26 @@
+<xml>
+    <block type="text_element" id="7" inline="false" x="99" y="114">
+        <value name="text">
+            <block type="text" id="8">
+                <field name="TEXT">Hello World!</field>
+            </block>
+        </value>
+        <next>
+            <block type="controls_repeat_ext" id="9" inline="true">
+                <value name="TIMES">
+                    <block type="math_number" id="10">
+                        <field name="NUM">3</field>
+                    </block>
+                </value>
+                <statement name="DO">
+                    <block type="circle_element" id="11" inline="false">
+                        <field name="name">ball</field>
+                    </block>
+                </statement>
+            </block>
+        </next>
+    </block>
+    <block type="text" id="13" x="219" y="248">
+        <field name="TEXT">Another text.</field>
+    </block>
+</xml>

@@ -21,11 +21,11 @@ module.exports = new LocalStrategy(
     return done(err)  if err
     unless user
       return done(null, false,
-        message: "Unknown user"
+        message: config['translations'][config['locale']]['unknown_user']
       )
     unless user.authenticate(password)
       return done(null, false,
-        message: "Invalid password"
+        message: config['translations'][config['locale']]['invalid_password']
       )
     done null, user
 

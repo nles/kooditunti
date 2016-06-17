@@ -18,12 +18,7 @@
 {% block exercise_tips %}
 {% if level == 1 %}
 <div class="task-overview">
-  <h2>Elementit ja koordinaatisto</h2>
-  <p>Piirrä kolmella erikokoisella pallolla kentälle lumiukon näköinen otus määrittämällä palloille oikea sijainti.</p>
-  <p>
-    <strong>Esimerkki sijainnin kertomisesta:</strong><br />
-    <img src="/img/exercises/events/level1_example.png" />
-  </p>
+  {% autoescape false %}{{ exercises_events_level1_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-elements" class="exercise-tip-placement" style="top:80px;left:200px;width:250px"></div>
 <div id="tip-coord-array" class="exercise-tip-placement" style="top:320px;left:50px;width:190px"></div>
@@ -32,157 +27,110 @@
 <div id="tip-coord-example1" class="exercise-tip-placement" style="top:190px;right:290px;width:40px;"></div>
 <div id="tip-coord-example2" class="exercise-tip-placement" style="top:370px;right:415px;width:40px;"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
-    <h2>Elementit ja koordinaatisto</h2>
-    <p>Tutustutaan siihen miten elementtejä saa lisättyä kentälle haluttuun kohtaan.</p>
+  <li data-button="{{ start_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
+    {% autoescape false %}{{ exercises_events_level1_modal1 }}{% endautoescape %}
   </li>
-  <li data-id="tip-elements" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true">
-    <!--<p>Muistatko vielä mitä nämä palikat tekevät? Kertaa ensimmäinen harjoitus jos et muista.</p>-->
-    <!--<p>Huomaa että nyt tekstille ja ympyrälle voi määrittää myös sijainnin.</p>-->
-    <p>Tässä tehtävässä käytössäsi palikoita jotka kaikki piirtävät eri kokoisen pallon. Näille palloille voi kertoa myös sijainnin.</p>
+  <li data-id="tip-elements" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level1_modal2 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.openFirstCategory()"></div>
   </li>
-  <li data-id="tip-coord-array" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true">
-    <p>Sijanti määritellään tällä palikalla. Tutustutaan seuraavaksi koordinaatistoon ja siihen mitä tähän palikkaan liitetyt kirjaimet ja numerot tarkoittavat.</p>
+  <li data-id="tip-coord-array" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level1_modal3 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.openFirstCategory()"></div>
   </li>
+  <li data-id="output-stage" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: left; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level1_modal4 }}{% endautoescape %}
   </li>
-  <li data-id="output-stage" data-button="Seuraava" class="wide" data-options="tip_location: left; prev_button: true">
-    <p>Kentän vasemmassa laidassa ja sen yläpuolella on numeroita jotka määrittelevät koordinaatiston.</p>
-    <!--<p>Tämä voi olla hankalaa jos et ole aikaisemmin koordinaatistosta kuullut, joten katsotaan seuraavaksi muutama esimerkki.</p>-->
+  <li data-id="tip-coord-x" data-button="{{ next_button_caption }}" data-options="tip_location: bottom; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level1_modal5 }}{% endautoescape %}
   </li>
-  <li data-id="tip-coord-x" data-button="Seuraava" data-options="tip_location: bottom; prev_button: true">
-    <p>Yläpuolen numerot kertovat X-koordinaatin, eli sijainnin vasemmalta oikealle.</p>
+  <li data-id="tip-coord-y" data-button="{{ next_button_caption }}" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level1_modal6 }}{% endautoescape %}
   </li>
-  <li data-id="tip-coord-y" data-button="Seuraava" data-options="tip_location: right; prev_button: true">
-    <p>Vasemmalla puolella näkyvät numerot kertovat Y-koordinaatin, eli sijainnin ylhäältä alas.</p>
+  <li data-id="tip-coord-example1" data-button="{{ next_button_caption }}" data-options="tip_location: bottom; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level1_modal7 }}{% endautoescape %}
   </li>
-  <li data-id="tip-coord-example1" data-button="Seuraava" data-options="tip_location: bottom; prev_button: true">
-    <img src="/img/exercises/events/coord_example1.png" />
-    <p>Näillä arvoilla sijanti olisi suurinpiirtein tässä (X = 7 ja Y = 5).</p>
-  </li>
-  <li data-id="tip-coord-example2" data-button="Seuraava" data-options="tip_location: top; prev_button: true">
-    <img src="/img/exercises/events/coord_example2.png" />
-    <p>Näillä arvoilla sijanti olisi suurinpiirtein tässä (X = 4 ja Y = 9).</p>
+  <li data-id="tip-coord-example2" data-button="{{ next_button_caption }}" data-options="tip_location: top; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level1_modal8 }}{% endautoescape %}
   </li>
   <li data-button="OK!" class="wide" data-options="tip_location: right; prev_button: true">
-    <!--<p><strong>Tehtävä:</strong> testaa elementtien lisäämistä eri kohtiin kentälle.</p>-->
-    <p>
-      <span>Sijainnin voi kertoa elementille yhdistämällä siihen sijaintipalikan</span><br />
-      <strong>esimerkiksi näin:</strong>
-      <img src="/img/exercises/events/level1_example.png" />
-    </p>
-    <p>Kokeile vapaasti eri lukuja X ja Y kohdissa jos et vielä täysin ymmärtänyt miten niiden avulla pystyy kertomaan sijainnin.</p>
-    <!--<p>Voit lisätä niin monta elementtiä kuin haluat.</p>-->
-    <p><strong>Tehtävä:</strong> piirrä kolmella erikokoisella pallolla kentälle lumiukon näköinen otus määrittämällä palloille oikea sijainti.</p>
+    {% autoescape false %}{{ exercises_events_level1_modal9 }}{% endautoescape %}
   </li>
 </ol>
 <div id="evaluation-selects">
-  <div>Ymmärrän miten koordinaatisto toimii.</div>
-  <div>Sain piirrettyä lumiukon näköisen otuksen palloilla.</div>
+  <div>{{ i_understand_how_coordinate_system_works }}</div>
+  <div>{{ i_could_draw_a_snowman }}</div>
 </div>
 {% endif %}
 {% if level == 2 %}
 <div class="task-overview">
-  <h2>Tapahtumat</h2>
-  <p>Testaa tapahtuma-elementin käyttämistä</p>
-  <p>
-    <strong>Esimerkkejä:</strong>
-    <ul>
-      <li>luo pallo jota klikkaamalla luodaan tekstiä</li>
-      <li>luo pallo jota klikkaamalla luodaan toinen pallo</li>
-      <li>luo pallo jota klikkaamalla muutetaan kentän painovoimaa</li>
-      <li>muuta painovoimaa kun klikataan näppäimistöltä jotain näppäintä</li>
-    </ul>
-  </p>
+  {% autoescape false %}{{ exercises_events_level2_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-step1" class="exercise-tip-placement" style="top:5px;left:150px;width:250px"></div>
 <div id="tip-step2" class="exercise-tip-placement" style="top:165px;left:130px;width:250px"></div>
 <div id="tip-step3" class="exercise-tip-placement" style="top:195px;left:130px;width:250px"></div>
 <!--<div id="tip-step4" class="exercise-tip-placement" style="top:80px;left:0px;width:250px"></div>-->
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
-    <h2>Tapahtumat</h2>
-    <!--<p>Yleensä kaikki koodi suoritetaan ylhäältä alas kun ohjelma suoritetaan.</p>-->
-    <!--<p>Lisäämällä koodiisi tapahtumia, suoritetaan määritelty koodi silloin kun jotain tapahtuu.</p>-->
-    <p>Tapahtuma voi olla esimerkiksi se, että ohjelman suorituksen aikana:
-    <ul>
-      <li>klikataan hiirellä jotain kentällä olevaa elementtiä tai...</li>
-      <li>...painetaan näppäimistöltä jotain näppäintä.</li>
-    </ul>
-    </p>
+  <li data-button="{{ start_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
+    {% autoescape false %}{{ exercises_events_level2_modal1 }}{% endautoescape %}
   </li>
-  <li data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true">
-    <p>Toteutetaan yhdessä yksinkertainen ohjelma joka hyödyntää tapahtumia. Voit siirtää koodipalikoita myös tämän ohjeistuksen aikana.</p>
+  <li data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level2_modal2 }}{% endautoescape %}
   </li>
-  <li data-id="tip-step1" data-button="Seuraava" data-options="tip_location: right; prev_button: true">
-    <p>Aloita raahaamalla tämä "Luo ympyrä" -palikka koodialueelle.</p>
+  <li data-id="tip-step1" data-button="{{ next_button_caption }}" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level2_modal3 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.openFirstCategory()"></div>
   </li>
-  <li data-id="tip-step2" data-button="Seuraava" data-options="tip_location: bottom; prev_button: true">
-    <p>Raahaa nyt tämä tapahtuma-elementti koodialueelle <strong>edellisen palikan alapuolelle</strong></p>
-    <p>Huomaa että "pallo" on valittuna pudotusvalikosta. Tätä voi myös vaihtaa jos kentällä on useampia elementtejä.</p>
+  <li data-id="tip-step2" data-button="{{ next_button_caption }}" data-options="tip_location: bottom; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level2_modal4 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.openFirstCategory()"></div>
   </li>
-  <li data-id="tip-step3" data-button="Seuraava" data-options="tip_location: top; prev_button: true">
-    <p>Lisää viimeksi lisätyn <strong>tapahtuma-elementin sisään</strong> "Piirrä teksti" -palikka.</p>
+  <li data-id="tip-step3" data-button="{{ next_button_caption }}" data-options="tip_location: top; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level2_modal5 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.openFirstCategory()"></div>
   </li>
-  <li data-id="code-area" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true">
-    <p>Koodisi pitäisi näyttää nyt siis suurinpiirtein tältä:</p>
-    <img src="/img/exercises/events/level2_example.png" />
+  <li data-id="code-area" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_events_level2_modal6 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.closeFirstCategory()"></div>
   </li>
   <li data-button="OK!" class="wide" data-options="tip_location: right; prev_button: true">
-    <p>Suorita koodi ja katso mitä tapahtuu. Muista klikata hiirellä kentälle piirtyvää palloa, niin näet miten tapahtuma toimii.</p>
-    <p>Suoritettuasi koodin, voit testata vapaasti muita tapoja käyttää tapahtumia. Tässä muutama esimerkki:
-    <ul>
-      <li>luo pallo jota klikkaamalla luodaan toinen pallo</li>
-      <li>luo pallo jota klikkaamalla muutetaan kentän painovoimaa</li>
-      <li>muuta painovoimaa kun klikataan näppäimistöltä jotain näppäintä</li>
-    </ul>
-    </p>
+    {% autoescape false %}{{ exercises_events_level2_modal7 }}{% endautoescape %}
   </li>
 </ol>
 <div id="evaluation-selects">
-  <div>Sain tehtyä pallon, jota klikatessa kentälle ilmestyy teksti tai uusi pallo.</div>
-  <div>Ymmärrän miten tapahtumat toimivat.</div>
+  <div>{{ i_could_create_a_ball }}</div>
+  <div>{{ i_understand_how_events_work }}</div>
 </div>
 {% endif %}
 {% if level == 3 %}
 <div class="task-overview">
-  <h2>Elementtien muokkaaminen</h2>
-  <p>Opitaan muokkaamaan elementin ominaisuuksia.</p>
-  <p><strong>Tehtävä:</strong> tee ohjelma, jossa elementin paikka vaihtuu kun elementtiä klikataan.</p>
+  {% autoescape false %}{{ exercises_events_level3_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-rect-block" class="exercise-tip-placement" style="top:70px;left:220px;width:250px"></div>
 <div id="tip-edit-block" class="exercise-tip-placement" style="top:165px;left:220px;width:250px"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Aloita" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
-    <h2>Elementtien muokkaaminen</h2>
-    <p>Pystyt myös muokkaamaan elementtien ominaisuuksia.</p>
+  <li data-button="{{ start_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
+    {% autoescape false %}{{ exercises_events_level3_modal1 }}{% endautoescape %}
   </li>
-  <li data-id="tip-rect-block" data-button="Seuraava" class="wide" data-options="prev_button: true; tip_location: right;">
-    <p>Palikan kyljestä löytyvästä tähdestä klikkaamalla löydät kaikki muokkaukset mitä voit elementille tehdä. Klikkaa tähteä nyt.</p>
+  <li data-id="tip-rect-block" data-button="{{ next_button_caption }}" class="wide" data-options="prev_button: true; tip_location: right;">
+	{% autoescape false %}{{ exercises_events_level3_modal2 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Events.bindNextTourToMutatorIconClick()"></div>
   </li>
-  <li data-id="tip-rect-block" data-button="Seuraava" class="wide" data-options="prev_button: true; tip_location: right;">
-    <p>Ominaisuuksia voi lisätä tai poistaa raahamalla niitä "ominaisuudet" -lohkoon tai pois sieltä.</p>
-    <p><img src="/img/exercises/events/modify_bubble_help.png" /></p>
-    <p>Muokkausikkuna sulkeutuu klikkaamalla tähdestä uudelleen.</p>
+  <li data-id="tip-rect-block" data-button="{{ next_button_caption }}" class="wide" data-options="prev_button: true; tip_location: right;">
+    {% autoescape false %}{{ exercises_events_level3_modal3 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Events.unbindMutatorIconClick()"></div>
     <div class="after-step-method" style="display:none" data-exec="Exercises.hideBubbles()"></div>
   </li>
-  <li data-id="tip-edit-block" data-button="Seuraava" class="wide" data-options="prev_button: true; tip_location: right;">
-    <p>Tällä palikalla pystyt muokkaamaan luotua elementtiä esimerkiksi vaihtamalla sen sijantia.</p>
+  <li data-id="tip-edit-block" data-button="{{ next_button_caption }}" class="wide" data-options="prev_button: true; tip_location: right;">
+    {% autoescape false %}{{ exercises_events_level3_modal4 }}{% endautoescape %}
   </li>
-  <li data-button="Ok!" class="wide" data-options="prev_button: true; tip_location: right;">
-    <p><strong>Tehtävä:</strong> tee ohjelma, jossa elementin paikka vaihtuu kun elementtiä klikataan.</p>
+  <li data-button="OK!" class="wide" data-options="prev_button: true; tip_location: right;">
+    {% autoescape false %}{{ exercises_events_level3_modal5 }}{% endautoescape %}
   </li>
 </ol>
 <div id="evaluation-selects">
-  <div>Onnistuin muokkaamaan uutta elementtiä (esimerkiksi asettamalla sille sijainnin).</div>
-  <div>Onnistuin luomaan elementin joka vaihtaa paikkaa kun sitä klikataan.</div>
+  <div>{{ i_could_modify_a_new_element }}</div>
+  <div>{{ i_could_create_a_new_element_that_changes_its_place_when_clicked }}</div>
 </div>
 {% endif %}
 {% endblock %}

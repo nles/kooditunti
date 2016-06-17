@@ -1,0 +1,40 @@
+<xml id="toolbox" style="display: none">
+  <category name="Elements">
+    <block type="rectangle_element">
+      <field name="name">square</field>
+    </block>
+    <block type="edit_element"></block>
+  </category>
+  <category name="Other">
+    <block type="coordinate_array">
+      <value name="xcoord">
+        <block type="math_number">
+          <field name="NUM">6</field>
+        </block>
+      </value>
+      <value name="ycoord">
+        <block type="math_number">
+          <field name="NUM">6</field>
+        </block>
+      </value>
+    </block>
+    <block type="when_clicked"></block>
+    <block type="when_pressed"></block>
+    <block type="math_number">
+      <field name="NUM">6</field>
+    </block>
+    <block type="gravity_switch"></block>
+    <block type="math_random_int">
+      <value name="FROM">
+        <block type="math_number">
+          <field name="NUM">1</field>
+        </block>
+      </value>
+      <value name="TO">
+        <block type="math_number">
+          <field name="NUM">100</field>
+        </block>
+      </value>
+    </block>
+  </category>
+</xml>

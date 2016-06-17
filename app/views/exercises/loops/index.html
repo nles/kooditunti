@@ -19,41 +19,29 @@
 
 {% block exercise_tips %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Ohjaa pallo (<img src="/img/exercises/maze/walker.png" />) maaliin (<img src="/img/exercises/maze/goal.png" />) komentojen avulla. Pallo etenee kentällä yksi ruutu kerrallaan.</p>
+ {% autoescape false %}{{ exercises_loops_level1_task_overview }}{% endautoescape %}
 </div>
 {% if level == 1 %}
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
-    <h2>Yksinkertainen labyrintti</h2>
-    <p>Tehtävänäsi on ohjata pallo (<img src="/img/exercises/maze/walker.png" />) maaliin (<img src="/img/exercises/maze/goal.png" />) koodialueelle lisättävien komentojen avulla. Pallo etenee kentällä yksi ruutu kerrallaan.</p>
+  <li data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
+    {% autoescape false %}{{ exercises_loops_level1_modal1 }}{% endautoescape %}
   </li>
-  <li data-button="Aloita" class="wide" data-options="prev_button: true">
-    <p>Muista että komennot suoritetaan vuorotellen ylhäältä alas edeten.</p>
+  <li data-button="{{ start_button_caption }}" class="wide" data-options="prev_button: true">
+  {% autoescape false %}{{ exercises_loops_level1_modal2 }}{% endautoescape %}
   </li>
 </ol>
 {% endif %}
 {% if level == 2 %}
 <ol class="joyride-list" data-joyride>
-  <li data-button="Aloita" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
-    <h2>Toistolauseet</h2>
-    <p>Tehtävä on sama kuin viime tasolla, mutta nyt pystyt käyttämään toistolausetta jotta jokaista askelta ei tarvitse lisätä erikseen.</p>
-    <p>
-      <strong>Esimerkki:</strong><br />
-      <img src="/img/exercises/loops/example.png" />
-    </p>
+  <li data-button="{{ start_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
+   {% autoescape false %}{{ exercises_loops_level2_modal1 }}{% endautoescape %} 
   </li>
 </ol>
 {% endif %}
 {% if level == 3 %}
 <ol class="joyride-list" data-joyride>
-  <li data-button="Aloita" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
-    <h2>Vaikeampi labyrintti</h2>
-    <p>Huomaa että voit suorittaa myös sarjan komentoja toistolauseen sisällä.</p>
-    <p>
-      <strong>Esimerkki:</strong><br />
-      <img src="/img/exercises/loops/comb-example.png" />
-    </p>
+  <li data-button="{{ start_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false; modal: true">
+    {% autoescape false %}{{ exercises_loops_level3_modal1 }}{% endautoescape %} 
   </li>
 </ol>
 {% endif %}

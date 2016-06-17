@@ -76,5 +76,5 @@ resetProgress = ->
   location.reload()
 
 $(".reset-button").click ->
-  return unless confirm("Haluatko varmasti aloittaa alusta?")
+  return unless confirm(L.translations['reset_confirm'])
   resetProgress()

@@ -1,0 +1,6 @@
+<xml id="toolbox" style="display: none">
+  <block type="text_element"></block>
+  <block type="text">
+    <field name="TEXT">Hello World!</field>
+  </block>
+</xml>

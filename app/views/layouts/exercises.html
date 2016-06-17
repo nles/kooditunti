@@ -19,7 +19,7 @@
 <script type="text/javascript" src="/vendor/blockly/blocks_compressed.js"></script>
 <script type="text/javascript" src="/vendor/blockly/javascript_compressed.js"></script>
 <script type="text/javascript" src="/vendor/blockly/patches.js"></script>
-<script type="text/javascript" src="/vendor/blockly/fi.js"></script>
+<script type="text/javascript" src="/vendor/blockly/{{ blockly_lang }}.js"></script>
 <script type="text/javascript" src="/vendor/blockly/storage.js"></script>
 <script type="text/javascript" src="/vendor/js-interpreter/acorn_interpreter.js"></script>
 <script type="text/javascript" src="/blockly/patches/extra_properties.js"></script>
@@ -30,7 +30,7 @@
 <script>Exercises.currentLevel = {{ level }};</script>
 <script>Exercises.currentName = '{{ exerciseName }}';</script>
 <script>Exercises.currentPathName = '{{ exercisePathName }}';</script>
-<script>Exercises.currentID = '{{ exerciseName }}_level{{ level }}';</script>
+<script>Exercises.currentID = '{{ exerciseName }}_level{{ level }}_locale_{{ locale }}';</script> <!-- here you can add support for localization -->
 <script>Exercises.currentColor = '{{ color }}';</script>
 {% endblock %}
 
@@ -65,15 +65,15 @@
           <div id="code-area" class="overlay-resize">
             <div id="code-area-borders">
               <div id="blockly" class="overlay-resize"></div>
-              <div id="reset-code-btn"><a class="">palauta oletuskoodi</a></div>
-              <div id="start-execution-btn"><a class="button custom-btn" href="#steps">Suorita koodi</a></div>
-              <div id="end-execution-btn" style="display:none;"><a class="button custom-btn">Keskeytä suoritus</a></div>
+              <div id="reset-code-btn"><a class="">{{ reset_to_defaults }}</a></div>
+              <div id="start-execution-btn"><a class="button custom-btn" href="#steps">{{ execute_code }}</a></div>
+              <div id="end-execution-btn" style="display:none;"><a class="button custom-btn">{{ abort_code_execution }}</a></div>
               <div class="resize-handle"></div>
             </div>
             <div id="code-area-actions">
               <div id="evaluate-btn" style="display:none;" class="right">
-                <span data-tooltip class="has-tip tip-left" title="Kun olet mielestäsi saanut tehtävän tehtyä, klikkaa tästä!">
-                  <a class="button tiny custom-btn">Arvioi suoritus</a>
+                <span data-tooltip class="has-tip tip-left" title="{{ evaluate_btn_tooltip }}">
+                  <a class="button tiny custom-btn">{{ evaluate_performance }}</a>
                 </span>
               </div>
             </div>

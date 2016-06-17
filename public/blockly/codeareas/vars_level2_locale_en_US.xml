@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<xml>
+  <block type="circle_element" id="21" inline="false" x="105" y="251">
+    <mutation properties="radius,position"/>
+    <field name="name">ball1</field>
+    <value name="radius_mutator">
+      <block type="variables_get" id="22">
+        <field name="VAR">Ball radius</field>
+      </block>
+    </value>
+    <value name="position_mutator">
+      <block type="coordinate_array_simple" id="23">
+        <field name="xpos">3</field>
+        <field name="ypos">4</field>
+      </block>
+    </value>
+    <next>
+      <block type="circle_element" id="24" inline="false">
+        <mutation properties="radius,position"/>
+        <field name="name">ball2</field>
+        <value name="radius_mutator">
+          <block type="variables_get" id="25">
+            <field name="VAR">Ball radius</field>
+          </block>
+        </value>
+        <value name="position_mutator">
+          <block type="coordinate_array_simple" id="26">
+            <field name="xpos">6</field>
+            <field name="ypos">4</field>
+          </block>
+        </value>
+        <next>
+          <block type="circle_element" id="27" inline="false">
+            <mutation properties="radius,position"/>
+            <field name="name">ball3</field>
+            <value name="radius_mutator">
+              <block type="variables_get" id="28">
+                <field name="VAR">Ball radius</field>
+              </block>
+            </value>
+            <value name="position_mutator">
+              <block type="coordinate_array_simple" id="29">
+                <field name="xpos">9</field>
+                <field name="ypos">4</field>
+              </block>
+            </value>
+          </block>
+        </next>
+      </block>
+    </next>
+  </block>
+</xml>

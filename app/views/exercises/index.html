@@ -14,17 +14,17 @@
     <li class="left">
       <div class="wrapper">
         <!-- href="/harjoitukset" -->
-        <a id="exercises-link" class="active" href="#">Harjoitukset</a>
+        <a id="exercises-link" class="active" href="#">{{ title }}</a>
       </div>
     </li>
     <li class="left">
       <div class="wrapper">
-        <a href="/koodikentta">Koodikenttä</a>
+        <a href="/koodikentta">{{ code_field_link }}</a>
       </div>
     </li>
     <li class="right">
       <div class='wrapper'>
-        <a id="info-link" href="#info">Info</a>
+        <a id="info-link" href="#info">{{ info_link }}</a>
       </div>
     </li>
   </ul>
@@ -33,60 +33,35 @@
 <div id="page-wrapper">
 <div class="large-12 columns">
   <div id="exercises-page" class="page curr">
-    <a href="/blockly-games/appengine/puzzle.html?lang=fi#warmup" class="exercise-button warmup">
-      <div class="text">0.<br />Lämmittely</div>
+    <a href="/blockly-games/appengine/puzzle.html?lang={{ blockly_lang }}#warmup" class="exercise-button warmup">
+      <div class="text">0.<br />{{ warmup_title }}</div>
     </a>
     <a href="/harjoitukset/perusteet" class="exercise-button basics">
       {% block stars %}{% endblock %}
-      <div class="text">1.<br />Perusteet</div>
+      <div class="text">1.<br />{{ basics_title }}</div>
     </a>
     <a href="/harjoitukset/toistolauseet" class="exercise-button loops">
       {% block stars %}{% endblock %}
-      <div class="text">2.<br />Toistolauseet</div>
+      <div class="text">2.<br />{{ loops_title }}</div>
     </a>
     <a href="/harjoitukset/koordinaatisto-ja-tapahtumat" class="exercise-button events">
       {% block stars %}{% endblock %}
-      <div class="text">3.<br />Koordinaatisto ja tapahtumat</div>
+      <div class="text">3.<br />{{ coordinate_system_and_events_title }}</div>
     </a>
     <a href="/harjoitukset/muuttujat" class="exercise-button vars">
       {% block stars %}{% endblock %}
-      <div class="text">4.<br />Muuttujat</div>
+      <div class="text">4.<br />{{ variables_title }}</div>
     </a>
     <a href="/harjoitukset/ehtolauseet" class="exercise-button ifs">
       {% block stars %}{% endblock %}
-      <div class="text">5.<br />Ehtolauseet<!-- ja koordinaatisto --></div>
+      <div class="text">5.<br />{{ conditional_statements_title }}</div>
     </a>
     <br /><br />
-    <a href="#" class="reset-button">Aloita alusta</a>
+    <a href="#" class="reset-button">{{ start_over }}</a>
   </div>
   <div id="info-page" class="page next">
-    <h3>Info</h3>
-    <p>Kooditunti.fi on sivusto jossa opit ohjelmonnin perusteet.</p>
-    <p>Sivustolta löytyy viisi harjoituskokonaisuutta, joissa perehdytään
-    ohjelmoinnin käsitteeisiin yksinkertaisten tehtävien ja selkeiden esimerkkien avulla.</p>
-    <p>Koodikentällä pääset käyttämään mielikuvitustasi ja koodaamaan
-    omia ohjelmia sivuston tarjoamien työkalujen avulla.</p>
-    <p>Lisää resursseja ohjelmoinnin opiskeluun löytyy mm. seuraavista linkeistä:</p>
-    <p>
-      <a href="https://blockly-games.appspot.com/" target="_blank">Blockly-Games</a><br />
-      <a href="http://studio.code.org/flappy/1" target="_blank">Tee oma Flappy-bird peli.</a><br />
-      <a href="http://studio.code.org/s/frozen/stage/1/puzzle/1" target="_blank">Koodaa Annan ja Elsan kanssa.</a><br />
-      <a href="https://scratch.mit.edu/" target="_blank">Scratch</a><br />
-      <a href="https://www.khanacademy.org/computing/computer-programming" target="_blank">Khan Academyn kursseja ohjelmoinnista.</a><br />
-      <a href="http://www.codecademy.com/en/tracks/javascript" target="_blank">Codeacademyn kurssi Javascriptistä.</a><br />
-    </p>
-    {#
-    <p>Lisää harjoituksia löydät mm. <a href="/blockly-games/appengine/index.html?lang=fi">täältä</a></p>
-    <h3>Uutta</h3>
-    <ul>
-      <li><strong>29.1.2015</strong> - Sivusto julkaistu</a></li>
-      <!--<li>2015-01-05 - Ehtolauseet harjoitus valmis</a></li>-->
-      <!--<li>2014-12-28 - Aloitussivu harjoitustyyppeillä (tämä sivu)</a></li>-->
-      <!--<li>2014-12-15 - Kyselyille pohja: <a href="/alkukysely" target="_blank"><strong>alkukysely demo</strong></a></li>-->
-      <!--<li style="font-size:11px;">2014-12-12 - Pohjaa tehtävätyypeille ja yksi osittain toimiva demo: <a href="/harjoitukset/maze" target="_blank"><strong>toistolauseet</strong></a></li>-->
-      <!--<li style="font-size:10px;">2014-11-28 - Sivusto luotu. Lisätty lista harjoitteista selitteineen + esimerkkeineen ja osittain toimiva vapaa kenttä</li>-->
-    </ul>
-    #}
+    <h3>{{ info_header }}</h3>
+    {% autoescape false %}{{ info_content }}{% endautoescape %}
   </div>
 </div>
 </div>

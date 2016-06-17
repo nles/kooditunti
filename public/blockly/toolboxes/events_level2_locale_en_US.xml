@@ -1,0 +1,49 @@
+<xml id="toolbox" style="display: none">
+  <category name="Tutorial">
+    <block type="circle_element">
+      <field name="name">ball</field>
+      <mutation properties="position"></mutation>
+      <value name="position_mutator">
+        <block type="coordinate_array">
+          <value name="xcoord">
+            <block type="math_number">
+              <field name="NUM">6</field>
+            </block>
+          </value>
+          <value name="ycoord">
+            <block type="math_number">
+              <field name="NUM">6</field>
+            </block>
+          </value>
+        </block>
+      </value>
+    </block>
+    <block type="when_clicked"></block>
+    <block type="text_element">
+      <value name="text">
+        <block type="text">
+          <field name="TEXT">Hello World!</field>
+        </block>
+      </value>
+    </block>
+  </category>
+  <category name="Other blocks">
+    <block type="gravity_switch"></block>
+    <block type="when_pressed"></block>
+    <block type="rectangle_element">
+      <field name="name">square</field>
+    </block>
+    <block type="coordinate_array">
+      <value name="xcoord">
+        <block type="math_number">
+          <field name="NUM">6</field>
+        </block>
+      </value>
+      <value name="ycoord">
+        <block type="math_number">
+          <field name="NUM">6</field>
+        </block>
+      </value>
+    </block>
+  </category>
+</xml>

@@ -1,0 +1,21 @@
+<xml id="toolbox" style="display: none">
+  <category name="Code blocks">
+    <block type="variables_get"></block>
+    <block type="math_number">
+      <field name="NUM">50</field>
+    </block>
+    <block type="text_element">
+      <mutation properties="position"></mutation>
+      <value name="text">
+        <block type="text">
+          <field name="TEXT">Text</field>
+        </block>
+      </value>
+      <value name="position_mutator">
+        <block type="coordinate_array_simple"></block>
+      </value>
+    </block>
+    <block type="controls_if"></block>
+    <block type="logic_compare"></block>
+  </category>
+</xml>

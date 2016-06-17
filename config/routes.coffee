@@ -4,6 +4,7 @@ home = require("home")
 exercises = require("exercises")
 playground = require("playground")
 surveys = require("surveys")
+config = require("config")
 
 # Expose
 module.exports = (app, passport) ->

@@ -7,7 +7,7 @@
   <!--[if IE]>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <![endif]-->
-  <title>Kooditunti{% if title %} - {{ title }}{% endif %}</title>
+  <title>{% if service_name %}{{ service_name }} {% if title %}- {% endif %}{% endif %}{% if title %}{{ title }}{% endif %}</title>
   {% block meta %}{% endblock %}
   {#
   Allow css and js to be loaded in seperate files
@@ -33,12 +33,12 @@
   <script src="/vendor/foundation/js/foundation/foundation.tooltip.js"></script>
   <script src="/js/jedi_master.js"></script>
   <script src="/js/helpers.js"></script>
-  <script src="/js/fi.js"></script>
+  <script src="/js/{{ blockly_lang }}.js"></script>
   <link rel="stylesheet" type="text/css" href="/vendor/foundation/css/foundation.min.css" />
   <link rel="stylesheet" type="text/css" href="/css/jedi_master.css" />
   <link rel="stylesheet" type="text/css" href="/vendor/animate.css/animate.min.css" />
   <script>$(document).foundation();</script>
-  <script>L = L.fi</script>
+  <script>L = L.{{ blockly_lang }}</script>
   <style>
     .full-width{ width: 100%; max-width: 100%; }
   </style>

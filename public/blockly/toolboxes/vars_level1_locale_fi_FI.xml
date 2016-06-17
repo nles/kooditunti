@@ -1,0 +1,9 @@
+<xml id="toolbox" style="display: none">
+  <block type="variables_set"></block>
+  <block type="variables_get"></block>
+  <block type="math_number">
+    <field name="NUM">30</field>
+  </block>
+  <block type="text"></block>
+  <block type="text_element"></block>
+</xml>

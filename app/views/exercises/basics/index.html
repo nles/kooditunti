@@ -18,98 +18,82 @@
 {% block full_page_tips %}
 {% if level == 1 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Toteuta ensimmäinen ohjelmasi piirtämällä tekstiä kentälle.</p>
+  <h2>{{ exercise_header }}</h2>
+  {% autoescape false %}{{ exercises_basic_level1_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-navi" class="exercise-tip-placement" style="top:20px;left:10px;"></div>
 <div id="tip-levels" class="exercise-tip-placement" style="top:30px;left:45%;"></div>
 <div id="tip-blocks" class="exercise-tip-placement" style="top:90px;left:0px;"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Aloita" class="wide hide-modal-next" data-options="prev_button: false">
-    <h2>Kooditunti.fi perusteet</h2>
-    <p>Tässä harjoituksessa tutustutaan siihen miten Kooditunti-sivusto toimii.</p>
+  <li data-button="{{ start_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false">
+    {% autoescape false %}{{ exercises_basic_level1_modal1 }}{% endautoescape %}
   </li>
-  <li data-button="Seuraava" class="wide" data-options="prev_button: true">
-    <p>Jokaisen tehtävän alussa näytetään tälläinen askel askeleelta etenevä
-    ohjeistus. Jos vasta aloittelet ohjelmoinnin opettelua, on suositeltavaa
-    käydä ohjeet läpi huolella. Ohjeen voi halutessaan ohittaa klikkaamalla
-    rastista ohjeen oikeassa yläkulmassa.</p>
+  <li data-button="{{ next_button_caption }}" class="wide" data-options="prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level1_modal2 }}{% endautoescape %}
     <!--Jos kuitenkin koet että osaat jo tarpeeksi hyvin, etkä-->
     <!--tarvitse ohjeita, voit klikata tämän ikkunan oikeassa yläkulmassa olevasta-->
     <!--rastista ohjeen pois ja siirtyä suoraan tehtävän ratkaisemiseen.-->
   </li>
-  <li data-id="tip-navi" class="wide" data-button="Seuraava" data-options="tip_location: top; prev_button: true">
-    <p>Nuolesta pääset navigoimaan takaisin harjoitusvalikkoon.</p>
-    <p>Kysymysmerkkiä klikkaamalla näet mikä tason tehtävä oli, ja
-    saatat myös löytää ylimääräistä apua jos et millään saa tehtävää ratkaistua.</p>
+  <li data-id="tip-navi" class="wide" data-button="{{ next_button_caption }}" data-options="tip_location: top; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level1_modal3 }}{% endautoescape %}
   </li>
-  <li data-id="tip-levels" data-button="Seuraava" data-options="tip_location: top; prev_button: true">
-    <p>Näitä numeroita klikkaamalla pystyt vaihtamaan tasoa.</p>
-    <p>Valittu taso erottuu joukosta, ja jos olet päässyt tason läpi, ilmestyy sen kylkeen tähti.</p>
+  <li data-id="tip-levels" data-button="{{ next_button_caption }}" data-options="tip_location: top; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level1_modal4 }}{% endautoescape %}
   </li>
-  <li data-id="code-area" data-button="Seuraava" data-options="tip_location: right; prev_button: true">
-    <p>Sivun tärkeimpiä elementtejä ovat vasemman puolen koodialue...</p>
+  <li data-id="code-area" data-button="{{ next_button_caption }}" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level1_modal5 }}{% endautoescape %}
   </li>
-  <li data-id="output-stage" data-button="Seuraava" data-options="tip_location: left; prev_button: true">
-    <p>...ja oikealla puolella oleva kenttä.</p>
-    <p>Koodialueelle syötetty koodi suoritetaan kentällä.</p>
+  <li data-id="output-stage" data-button="{{ next_button_caption }}" data-options="tip_location: left; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level1_modal6 }}{% endautoescape %}
   </li>
-  <li data-id="tip-blocks" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true">
-    <p>Tästä löydät käytettävissä olevat koodipalikat.</p>
-    <p>Palikat vaihtuvat tason mukaan, ja uusista palikoista annetaan tarvittaessa ohjeistusta.</p>
+  <li data-id="tip-blocks" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level1_modal7 }}{% endautoescape %}
   </li>
   <li data-id="tip-blocks" class="wide pause-after" data-button="OK!" data-options="tip_location: right; prev_button: true; modal: true;">
-    <p>Palikat toimivat kuin palapelin palat ja yhdistyvät toisiinsa.</p>
-    <p>Kokeile palikoiden siirtämistä koodialueelle ja niiden yhdistämistä toisiinsa. Palikat siirtyvät hiirellä raahamalla.</p>
+    {% autoescape false %}{{ exercises_basic_level1_modal8 }}{% endautoescape %}
   </li>
-  <li data-button="Seuraava" class="wide" data-options="prev_button: true; modal: false;">
-    <p>Loistavaa, sait ensimmäisen ohjelmasi valmiiksi!</p>
+  <li data-button="{{ next_button_caption }}" class="wide" data-options="prev_button: true; modal: false;">
+    {% autoescape false %}{{ exercises_basic_level1_modal9 }}{% endautoescape %}
   </li>
   <li data-id="start-execution-btn" class="wide" data-options="tip_location: top; next_button: false; prev_button: true; modal: false;">
-    <p>Tästä klikkaamalla pystyt testaamaan miten ohjelmasi toimii. Kokeile sitä seuraavaksi.</p>
+    {% autoescape false %}{{ exercises_basic_level1_modal10 }}{% endautoescape %}
   </li>
 </ol>
 {% endif %}
 {% if level == 2 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Askeleittain etenevässä ohjeistuksessa käydään läpi sitä miten näiden palikoiden kanssa ohjelmointi toimii. Klikkaa "Suorita koodi" -nappia siirtyäksesi seuraavalle tasolle.</p>
+  <h2>{{ exercise_header }}</h2>
+  {% autoescape false %}{{ exercises_basic_level2_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-code" class="exercise-tip-placement" style="top:200px;left:400px;"></div>
 <div id="tip-statement" class="exercise-tip-placement" style="top:230px;left:320px;"></div>
 <div id="tip-lonely-block" class="exercise-tip-placement" style="top:330px;left:400px;"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Aloita" class="wide" data-options="prev_button: false">
-    <h2>Ohjelmoinnin perusteita</h2>
-    <p>Käydään pikaisesti läpi sitä miten näiden palikoiden kanssa ohjelmointi toimii.</p>
+  <li data-button="{{ start_button_caption }}" class="wide" data-options="prev_button: false">
+    {% autoescape false %}{{ exercises_basic_level2_modal1 }}{% endautoescape %}
   </li>
-  <li data-id="tip-code" data-button="Seuraava" data-options="tip_location: right; prev_button: true">
-    <p>Ohjelmakoodia suoritetaan ylhäältä alas.</p>
-    <p>Jotkin palikat kiinnittyvät toisiinsa myös ylä ja alapuolelta.</p>
+  <li data-id="tip-code" data-button="{{ next_button_caption }}" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level2_modal2 }}{% endautoescape %}
   </li>
-  <li data-id="tip-statement" data-button="Seuraava" data-options="tip_location: right; prev_button: true">
-    <p>Tälläisissa palikoissa koodia lisätään palikan sisään.</p>
-    <p>Tässä tapauksessa luodaan siis kolme palloa (palikan sisällä oleva koodi suoritetaan kolme kertaa).</p>
+  <li data-id="tip-statement" data-button="{{ next_button_caption }}" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level2_modal3 }}{% endautoescape %}
   </li>
-  <li data-id="tip-lonely-block" data-button="Seuraava" data-options="tip_location: right; prev_button: true">
-    <p>Huomaa palikoiden erot: Toiset palikat ottavat muita palikoita vastaan, ja toiset vain kiinnittyvät muihin.</p>
-    <p>Esimerkiksi tämä yksinäinen tekstipalikka ei tee mitään ilman että se on kiinnitettynä johonkin toiseen palikkaan.</p>
+  <li data-id="tip-lonely-block" data-button="{{ next_button_caption }}" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level2_modal4 }}{% endautoescape %}
   </li>
-  <li class="wide" data-button="Seuraava" data-options="tip_location: right; prev_button: true">
-    <p>Muista että voit ohjelmoidessasi missä tahansa vaiheessa testata ohjelmasi toimintaa.</p>
-    <p>Vaikeammissa tehtävissä on siis helpompi yrittää pilkkoa ongelmia pienempiin osiin ja ratkaista
-    ne yksi kerrallaan, sen sijaan että yrittäisi saada koko tehtävää ratkeamaan kerralla.</p>
+  <li class="wide" data-button="{{ next_button_caption }}" data-options="tip_location: right; prev_button: true">
+    {% autoescape false %}{{ exercises_basic_level2_modal5 }}{% endautoescape %}
     <div class="after-step-method" style="display:none" data-exec="Basics.endOnLastSlide()"></div>
   </li>
   <li class="wide" data-button="OK!" data-options="tip_location: right; prev_button: true">
-    <p>Klikkaa nyt vain "Suorita koodi" -nappia niin pääset seuraavalle tasolle.</p>
+    {% autoescape false %}{{ exercises_basic_level2_modal6 }}{% endautoescape %}
   </li>
 </ol>
 {% endif %}
 {% if level == 3 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Yritä piirtää kentälle jonkin laskutoimituksen tulos (esim 1 + 1).</p>
+  <h2>{{ exercise_header }}</h2>
+  {% autoescape false %}{{ exercises_basic_level3_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-categories" class="exercise-tip-placement" style="top:80px;left:0px;width:165px;"></div>
 <div id="tip-categories-open" class="exercise-tip-placement" style="top:70px;left:0px;"></div>
@@ -118,42 +102,40 @@
 <div id="tip-trash" class="exercise-tip-placement" style="top:575px;left:0px;width:110px;"></div>
 <div id="tip-reset" class="exercise-tip-placement" style="top:630px;left:0px;width:150px;"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide hide-modal-next" data-options="prev_button: false;">
-    <h2>Lisävinkkejä</h2>
-    <p>Nyt osaat perusteet. Käydään vielä pikaisesti läpi muutama juttu jotka helpottavat sinua matkan varrella.</p>
+  <li data-button="{{ next_button_caption }}" class="wide hide-modal-next" data-options="prev_button: false;">
+    {% autoescape false %}{{ exercises_basic_level3_modal1 }}{% endautoescape %}
   </li>
-  <li data-id="tip-categories" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true;">
-    <p>Joissain tehtävissä palikoita on sen verran paljon, että ne on jaettu kategorioihin. Kategorian nimeä klikkaamalla näet sen alla olevat palikat.</p>
+  <li data-id="tip-categories" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true;">
+    {% autoescape false %}{{ exercises_basic_level3_modal2 }}{% endautoescape %}
   </li>
-  <li data-id="tip-categories-open" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true;">
-    <p><strong>Uusi palikka:</strong> tällä pystyy määrittelemään lukuja.</p>
+  <li data-id="tip-categories-open" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true;">
+    {% autoescape false %}{{ exercises_basic_level3_modal3 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.openLastCategory()"></div>
   </li>
-  <li data-id="tip-arith" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true;">
-    <p><strong>Uusi palikka:</strong> tämä pystyy suorittamaan laskutoimituksia kun siihen yhdistää kaksi lukupalikkaa (yllä).</p>
-    <strong>Esimerkki:</strong> <img src="/img/exercises/basics/arithm_example.png" />
+  <li data-id="tip-arith" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true;">
+    {% autoescape false %}{{ exercises_basic_level3_modal4 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.openLastCategory()"></div>
   </li>
-  <li data-id="tip-text" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true;">
-    <p>"Piirrä teksti" -palikkaa pystyy käyttämään myös lukujen piirtämiseen.</p>
+  <li data-id="tip-text" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true;">
+    {% autoescape false %}{{ exercises_basic_level3_modal5 }}{% endautoescape %}
     <div class="before-step-method" style="display:none" data-exec="Exercises.openFirstCategory()"></div>
   </li>
-  <li data-id="tip-trash" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true;">
-    <p>Jos haluat joistain palikoista eroon, raahaa ne roskakoriin.</p>
+  <li data-id="tip-trash" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true;">
+    {% autoescape false %}{{ exercises_basic_level3_modal6 }}{% endautoescape %}
   </li>
-  <li data-id="tip-reset" data-button="Seuraava" class="wide" data-options="tip_location: right; prev_button: true;">
-    <p>Tästä linkistä pystyt poistamaan kaikki lisäämäsi palikat nopeasti.</p>
+  <li data-id="tip-reset" data-button="{{ next_button_caption }}" class="wide" data-options="tip_location: right; prev_button: true;">
+    {% autoescape false %}{{ exercises_basic_level3_modal7 }}{% endautoescape %}
   </li>
   <li data-button="OK!" class="wide pause-after" data-options="tip_location: right; prev_button: true;">
-    <p><strong>Tehtävä:</strong> Yritä piirtää kentälle jonkin laskutoimituksen tulos <br />(esim 1 + 1).</p>
+    {% autoescape false %}{{ exercises_basic_level3_modal8 }}{% endautoescape %}
   </li>
   <li data-id="evaluate-btn" class="wide" data-options="tip_location: top; next_button: false; prev_button: true;">
-    <p>Saat tehtävästä suoritusmerkinnän klikkaamalla tästä ja vastaamalla muutamaan kysymykseen. Nappi tulee esiin myös monissa muissa tehtävissä, joten muista klikata sitä kun olet saanut tehtävän tehtyä.</p>
+    {% autoescape false %}{{ exercises_basic_level3_modal9 }}{% endautoescape %}
   </li>
 </ol>
 <div id="evaluation-selects">
-  <div>Sain piirrettyä kentälle tekstiä</div>
-  <div>Teksti oli vastaus johonkin laskutoimitukseen</div>
+  <div>{{ i_could_draw_text_on_the_grid }}</div>
+  <div>{{ text_was_an_answer_to_a_calculation }}</div>
 </div>
 {% endif %}
 {% endblock %}

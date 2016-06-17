@@ -6,20 +6,20 @@
     $.each blocks, ->
       if $.inArray(@type, ['circle_element','rectangle_element']) != -1
         name = @getFieldValue("name")
-        return if name is "[nimeltään]"
+        return if name is L.translations['called_brackets']
         CodeArea.settableElements.push name
 
   settableElementsDropdownValues: (emptyVal) ->
     CodeArea.getSettableElements()
     dropdownValues = $.map(CodeArea.settableElements, ((n) -> [[n, n]]) )
-    emptyVal = "[valitse]" unless emptyVal?
+    emptyVal = L.translations['select_brackets'] unless emptyVal?
     dropdownValues = [[emptyVal, "x"]] if dropdownValues.length is 0
     dropdownValues
 
 
 Blockly.Blocks["prompt"] = init: ->
   @setColour 280
-  @appendValueInput("text").appendField "kysy"
+  @appendValueInput("text").appendField L.translations['ask']
   @setOutput true
 
 Blockly.JavaScript["prompt"] = (block) ->
@@ -29,9 +29,9 @@ Blockly.JavaScript["prompt"] = (block) ->
 Blockly.Blocks["when_clicked"] = init: ->
   @setColour 180
   @appendDummyInput("event")
-    .appendField "kun klikataan elementtiä"
+    .appendField L.translations['when_element_is_clicked']
     .appendField new Blockly.FieldDropdown(CodeArea.settableElementsDropdownValues), "element"
-  @appendStatementInput("when").appendField "tee"
+  @appendStatementInput("when").appendField L.translations['do_action']
   @setPreviousStatement true
   @setNextStatement true
   return
@@ -46,9 +46,9 @@ Blockly.JavaScript["when_clicked"] = (block) ->
 Blockly.Blocks["when_pressed"] = init: ->
   @setColour 180
   @appendDummyInput("event")
-    .appendField "kun painetaan näppäintä"
-    .appendField new Blockly.FieldDropdown([['[valitse]',''],["nuoli oikealle","right"],["nuoli vasemmalle","left"],["nuoli ylös","up"],["nuoli alas","down"],["X-kirjain","x"]]), "key"
-  @appendStatementInput("when").appendField "tee"
+    .appendField L.translations['when_a_key_is_pressed']
+    .appendField new Blockly.FieldDropdown([[L.translations['select_brackets'],''],[L.translations['arrow_right'],"right"],[L.translations['arrow_left'],"left"],[L.translations['arrow_up'],"up"],[L.translations['arrow_down'],"down"],[L.translations['x_character'],"x"]]), "key"
+  @appendStatementInput("when").appendField L.translations['do_action']
   @setPreviousStatement true
   @setNextStatement true
   return
@@ -62,8 +62,8 @@ Blockly.JavaScript["when_pressed"] = (block) ->
 
 Blockly.Blocks["gravity_switch"] = init: ->
   @setColour 260
-  @appendDummyInput().appendField("aseta painovoimaksi")
-    .appendField new Blockly.FieldDropdown([ ["maa","earth"],["kuu","moon"],["avaruus","space"] ]), "gravity"
+  @appendDummyInput().appendField(L.translations['set_gravity_to'])
+    .appendField new Blockly.FieldDropdown([ [L.translations['earth_gravity'],"earth"],[L.translations['moon_gravity'],"moon"],[L.translations['space_gravity'],"space"] ]), "gravity"
   @setPreviousStatement true
   @setNextStatement true
   @setTooltip ""
@@ -83,9 +83,9 @@ Blockly.JavaScript["gravity_switch"] = (block) ->
 
 Blockly.Blocks["wait_for"] = init: ->
   @setColour 160
-  @appendDummyInput().appendField "odota"
+  @appendDummyInput().appendField L.translations['wait_for']
   @appendValueInput("seconds").setCheck "Number"
-  @appendDummyInput().appendField "sekunti(a)"
+  @appendDummyInput().appendField L.translations['seconds']
   @appendStatementInput "statements"
   @setInputsInline true
   @setPreviousStatement true

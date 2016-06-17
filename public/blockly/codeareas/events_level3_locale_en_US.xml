@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<xml>
+    <block type="rectangle_element" id="1" x="56" y="71">
+        <field name="name">square</field>
+    </block>
+    <block type="edit_element" id="2" x="55" y="168">
+        <field name="element">square</field>
+    </block>
+</xml>

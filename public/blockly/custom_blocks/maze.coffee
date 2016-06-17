@@ -1,6 +1,6 @@
 Blockly.Blocks["move_left"] = init: ->
   @setColour 60
-  @appendDummyInput().appendField "Liiku vasemmalle"
+  @appendDummyInput().appendField L.translations['move_left']
   @setPreviousStatement true
   @setNextStatement true
   @setTooltip ""
@@ -12,7 +12,7 @@ Blockly.JavaScript["move_left"] = (block) ->
 
 Blockly.Blocks["move_right"] = init: ->
   @setColour 60
-  @appendDummyInput().appendField "Liiku oikealle"
+  @appendDummyInput().appendField L.translations['move_right']
   @setPreviousStatement true
   @setNextStatement true
   @setTooltip ""
@@ -25,7 +25,7 @@ Blockly.JavaScript["move_right"] = (block) ->
 
 Blockly.Blocks["move_up"] = init: ->
   @setColour 60
-  @appendDummyInput().appendField "Liiku ylös"
+  @appendDummyInput().appendField L.translations['move_up']
   @setPreviousStatement true
   @setNextStatement true
   @setTooltip ""
@@ -37,7 +37,7 @@ Blockly.JavaScript["move_up"] = (block) ->
 
 Blockly.Blocks["move_down"] = init: ->
   @setColour 60
-  @appendDummyInput().appendField "Liiku alas"
+  @appendDummyInput().appendField L.translations['move_down']
   @setPreviousStatement true
   @setNextStatement true
   @setTooltip ""
@@ -50,7 +50,7 @@ Blockly.JavaScript["move_down"] = (block) ->
 Blockly.Blocks["in_special_location"] = init: ->
   @setColour 290
   @appendDummyInput()
-    .appendField("pallo on punaisessa ruudussa")
+    .appendField(L.translations['ball_is_in_the_red_square'])
   @setOutput true
   return
 

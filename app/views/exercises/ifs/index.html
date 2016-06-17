@@ -20,9 +20,7 @@
 {% block exercise_tips %}
 {% if level == 1 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Ohjelma kysyy kysymyksen. Tehtäväsi on näyttää käyttäjälle teksti sen mukaan oliko vastaus oikein vai ei.</p>
-  <p><strong>Vinkki:</strong> jos <i>vastaus</i> <u>on yhtä kuin</u> <i>arvaus</i>...</p>
+{% autoescape false %}{{ exercises_ifs_level2_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-answer" class="exercise-tip-placement" style="top:31px;left:320px;"></div>
 <div id="tip-quess" class="exercise-tip-placement" style="top:71px;left:495px;"></div>
@@ -32,158 +30,76 @@
 <div id="tip-true" class="exercise-tip-placement" style="top:170px;left:180px;"></div>
 <div id="tip-false" class="exercise-tip-placement" style="top:205px;left:180px;"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide" data-options="prev_button: false">
-    <h2>Ehtolauseet</h2>
-    <p>Ehtolauseella pystytään ohjaamaan ohjelman suoritusta niin, että lauseen sisällä oleva koodi suoritetaan vain jos määritelty ehto toteutuu.</p>
-    <p>Esimerkki ehtolauseesta:<br /><img src="/img/exercises/ifs/ifs_example.png" /></p>
-    <p>Tälläinen ohjelma tulostaisi tekstin <strong>vain</strong> jos kello on 12.05.</p>
+  <li data-button="{{ start_button_caption }}" class="wide" data-options="prev_button: false">
+    {% autoescape false %}{{ exercises_ifs_level1_modal1 }}{% endautoescape %}
   </li>
-  <li data-button="Seuraava" data-options="prev_button: true">
-    <p>Tässä tehtävässä on valmiina yksinkertainen ohjelma, joka asettaa kaksi muuttujaa ja määrittelee sen jälkeen ehtolauseen.</p>
+  <li data-button="{{ next_button_caption }}" data-options="prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level1_modal2 }}{% endautoescape %}
   </li>
-  <li data-id="tip-answer" data-button="Seuraava" data-options="tip_location:right;prev_button: true">
-    <p>Nämä palikat jo tunnetkin. Muuttujan <i>vastaus</i> arvoksi asetetaan 50.</p>
+  <li data-id="tip-answer" data-button="{{ next_button_caption }}" data-options="tip_location:right;prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level1_modal3 }}{% endautoescape %}
   </li>
-  <li data-id="tip-quess" data-button="Seuraava" data-options="tip_location:right;prev_button: true">
-    <p>Tässä asetetaan muuttujan <i>arvaus</i> arvo kysymällä sitä suorituksen aikana (näet kohta miten se toimii).</p>
+  <li data-id="tip-quess" data-button="{{ next_button_caption }}" data-options="tip_location:right;prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level1_modal4 }}{% endautoescape %}
   </li>
-  <li data-id="tip-if" data-button="Seuraava" data-options="tip_location:bottom;prev_button: true">
-    <p>Tämä on ehtolause.</p>
+  <li data-id="tip-if" data-button="{{ next_button_caption }}" data-options="tip_location:bottom;prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level1_modal5 }}{% endautoescape %}
   </li>
-  <li data-id="tip-condition" data-button="Seuraava" data-options="tip_location:right;prev_button: true">
-    <p>Tässä on totuusarvoinen vertailija, jonka arvo (tosi tai epätosi) määrittää sen miten ehtolause toimii.</p>
-    <p>Esimerkki vertailijasta jonka arvo on tosi:<br /><img src="/img/exercises/ifs/compare_true.png" /></p>
+  <li data-id="tip-condition" data-button="{{ next_button_caption }}" data-options="tip_location:right;prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level1_modal6 }}{% endautoescape %}
   </li>
-  <!--<li data-id="tip-comparison" data-button="Seuraava" data-options="tip_location:top;prev_button: true">-->
-    <!--<p>Tämä on vertailija (valittuna <strong>on yhtä kuin</strong>)</p>-->
-    <!--<p>Ehdon vertailijaa pystyy vaihtamaan tarvittaessa tästä (näissä tehtävissä ei tarvitse vaihtaa)</p>-->
-     <!--(käytössä on esimerksi <strong>on yhtä kuin</strong>, <strong>ei ole yhtä kuin</strong>, <strong>on suurempi kuin</strong> jne.)-->
-  <!--</li>-->
-  <li data-id="tip-true" data-button="Seuraava" data-options="tip_location:right;prev_button: true">
-    <p>Tämä osa suoritetaan jos yllä oleva ehto on tosi (esimerkiksi ehto <strong>2 = 2</strong> on tosi, koska kaksi on kaksi)</p>
+  <li data-id="tip-true" data-button="{{ next_button_caption }}" data-options="tip_location:right;prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level1_modal7 }}{% endautoescape %}
   </li>
-  <li data-id="tip-false" data-button="Seuraava" data-options="tip_location:right;prev_button: true">
-    <p>Tämä osa suoritetaan jos yllä oleva ehto on epätosi (esimerkiksi ehto <strong>1 = 2</strong> on epätosi, koska yksi ei ole kaksi)</p>
+  <li data-id="tip-false" data-button="{{ next_button_caption }}" data-options="tip_location:right;prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level1_modal8 }}{% endautoescape %}
   </li>
   <li data-button="OK!" class="wide" data-options="tip_location:right;prev_button: true">
-    <p><strong>Tehtävä:</strong> Näytä kentällä teksti joka kertoo vastattiinko kysymykseen oikein vai väärin.</p>
-    <p>Suorita ensin ohjelma tälläisenaan niin näet miten vastauksen kysyminen toimii.</p>
+    {% autoescape false %}{{ exercises_ifs_level1_modal9 }}{% endautoescape %}
   </li>
 </ol>
 <div id="evaluation-selects">
-  <div>Sain tekstiä piirrettyä kentälle.</div>
-  <div>Teksti vaihtui sen mukaan annettiiko kysymykseen oikea vastaus.</div>
+  <div>{{ i_could_draw_text_on_the_grid }}</div>
+  <div>{{ the_text_changed_based_on_the_answer }}</div>
 </div>
 {% endif %}
 {% if level == 2 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Käytä ehtolauseita piirtääksesi tekstiä kun klikkauksia on tietty määrä.</p>
+{% autoescape false %}{{ exercises_ifs_level1_task_overview }}{% endautoescape %}
 </div>
 <div id="tip1" class="exercise-tip-placement" style="top:223px;left:400px;"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide" data-options="prev_button: false">
-    <h2>Lisää ehtolauseita</h2>
-    <p>Tämä ohjelma laskee kuinka monta kertaa palloa on klikattu.</p>
+  <li data-button="{{ start_button_caption }}" class="wide" data-options="prev_button: false">
+    {% autoescape false %}{{ exercises_ifs_level2_modal1 }}{% endautoescape %}
   </li>
-  <li data-button="Aloita" class="wide" data-options="prev_button: true">
-    <p>Tehtävänäsi on lisätä ohjelmaan tekstiä kun tietty määrä klikkauksia on saavutettu.</p>
-    <p>Voit lisätä esimerkiksi kannustushuudahduksia kun on saavutettu mielestäsi paljon klikkauksia.</p>
-    <p>Kokeile ensin miten ohjelma toimii tällä hetkellä.</p>
+  <li data-button="OK!" class="wide" data-options="prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level2_modal2 }}{% endautoescape %}
   </li>
 </ol>
 <div id="evaluation-selects">
-  <div>Sain piirrettyä kentälle tekstiä</div>
-  <div>Käytin tehtävässä ehtolauseita (yhtä tai useampaa)</div>
+  <div>{{ i_could_draw_text_on_the_grid }}</div>
+  <div>{{ i_used_one_or_more_ifs }}</div>
 </div>
 {% endif %}
 {% if level == 3 %}
 <div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Selvitä tämä vaikea labyrintti käyttämällä apuna muuttujia ja ehtolauseita.</p>
+  {% autoescape false %}{{ exercises_ifs_level3_task_overview }}{% endautoescape %}
 </div>
 <div id="tip-missing1" class="exercise-tip-placement" style="top:150px;left:290px;width:120px;"></div>
 <div id="tip-missing2" class="exercise-tip-placement" style="top:325px;left:290px;width:120px;"></div>
 <ol class="joyride-list" data-joyride>
-  <li data-button="Seuraava" class="wide" data-options="prev_button: false">
-    <h2>Haastava labyrintti</h2>
-    <p>Osa koodista on jo valmiina, mutta ohjema ei vielä toimi oikein.</p>
+  <li data-button="{{ next_button_caption }}" class="wide" data-options="prev_button: false">
+    {% autoescape false %}{{ exercises_ifs_level3_modal1 }}{% endautoescape %}
   </li>
-  <li data-id="tip-missing1" data-button="Seuraava" data-options="tip_location:right; prev_button: true">
-    <p>Tästä puuttuu jotain...</p>
+  <li data-id="tip-missing1" data-button="{{ next_button_caption }}" data-options="tip_location:right; prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level3_modal2 }}{% endautoescape %}
   </li>
-  <li data-id="tip-missing2" data-button="Seuraava" data-options="tip_location:right; prev_button: true">
-    <p>...ja tästä myös.</p>
+  <li data-id="tip-missing2" data-button="{{ next_button_caption }}" data-options="tip_location:right; prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level3_modal3 }}{% endautoescape %}
   </li>
-  <li data-button="Aloita" class="wide" data-options="prev_button: true">
-    <p>Selvitä miten koodi toimii ja täytä puuttuvat palaset niin että pallo löytää maaliin.</p>
-    <p>Kokeile ensin miten ohjelma toimii tällä hetkellä.</p>
+  <li data-button="OK!" class="wide" data-options="prev_button: true">
+    {% autoescape false %}{{ exercises_ifs_level3_modal4 }}{% endautoescape %}
   </li>
 </ol>
 {% endif %}
 {% endblock %}
-
-{#
-OLD LEVEL 2
-<div class="task-overview">
-  <h2>Tehtävä</h2>
-  <p>Ohjelma kysyy luodaanko pallo vai neliö. Täydennä ohjelma toimimaan käyttäjän vastauksen mukaisesti. Kokeile myös sijoittaa muoto johonkin toiseen paikkaan.</p>
-</div>
-<div id="tip-start" class="exercise-tip-placement" style="top:93px;left:400px;"></div>
-<div id="tip-mod-star" class="exercise-tip-placement" style="top:140px;left:140px;"></div>
-<div id="tip-mod-if" class="exercise-tip-placement" style="top:20px;left:180px;"></div>
-<div id="tip-mod-if2" class="exercise-tip-placement" style="top:20px;left:290px;"></div>
-<div id="tip-mod-circle" class="exercise-tip-placement" style="top:173px;left:210px;"></div>
-<div id="tip-mod-circle2" class="exercise-tip-placement" style="top:125px;left:390px;"></div>
-<div id="tip-coordinates" class="exercise-tip-placement" style="top:0px;left:0px;width:100px;"></div>
-<ol class="joyride-list" data-joyride>
-  <li data-button="Aloita" class="wide" data-options="prev_button: false">
-    <h2>Palikoiden muokkaaminen</h2>
-    <p>Kokeillaan vähän vaikeampaa ehtolausetehtävää ja tutustutaan siihen miten pystyt muokkaamaan palikoita.</p>
-  </li>
-  <li data-id="tip-start" data-button="Seuraava" class="wide" data-options="prev_button: true; tip_location: bottom;">
-    <p>Ohjelma kysyy käyttäjältä kysymyksen kun se suoritetaan ja tallentaa vastauksen muuttujaan nimeltään "muoto".</p>
-  </li>
-  <!--<li data-id="tip-mod-star" class="wide" data-options="prev_button: true; next_button: false; tip_location: right;">-->
-    <!--<p>Joidenkin palikoiden kyljestä löytyy tälläinen tähti. Tähteä klikkaamalla pystyt tekemään muutoksia palikan toimintaan.</p>-->
-    <!--<p>Klikkaa tähteä.</p>-->
-    <!--<div class="before-step-method" style="display:none" data-exec="Ifs.bindNextTourToMutatorIconClick()"></div>-->
-  <!--</li>-->
-  <!--<li data-id="tip-mod-if" data-button="Seuraava" class="wide" data-options="prev_button: true; tip_location: right;">-->
-  <!--<p>Ehtolausetta pystyy muokkaamaan lisäämällä siihen joko <strong>muuten jos</strong>- tai <strong>muuten</strong>-haaran.</p>-->
-    <!--<p><strong>"muuten jos"-haaralle</strong> pystytään määrittämään ehto, jonka toteutuessa edetään kyseiseen haaraan. Näytä pystyy palikkaan lisäämään useita.</p>-->
-    <!--<p><strong>"muuten"-haaraan</strong> edetään jos mihinkään aikaisemmista haaroista ei ole päästy etenemään. Näitä pystyy lisäämään palikkaan vain yhden.</p>-->
-    <!--<div class="after-step-method" style="display:none" data-exec="Ifs.bindNextTourToMutatorIconClick()"></div>-->
-  <!--</li>-->
-  <!--<li data-id="tip-mod-if2" class="wide" data-options="prev_button: true; next_button: false; tip_location: right;">-->
-    <!--<p>Kokeile lisätä molemmat muutokset palikkaan raahamalla ne vasemmalta oikealle. Huomaat miten palikka alla muuttuu.</p>-->
-    <!--<p>Pystyt myös poistamaan muutoksia raahamalla ne takaisin vasemmalle.</p>-->
-    <!--<p>Klikkaa tähteä uudelleen kun olet tehnyt palikkaan muutokset.</p>-->
-    <!--<div class="after-step-method" style="display:none" data-exec="Ifs.hideBubbles()"></div>-->
-  <!--</li>-->
-  <!--<li data-id="tip-mod-circle" class="wide" data-options="prev_button: true; next_button: false; tip_location: right;">-->
-    <!--<p>Myös esimerkiksi "Luo ympyrä" -palikasta löytyy tähti. Klikkaa sitä seuraavaksi.</p>-->
-    <!--<div class="before-step-method" style="display:none" data-exec="Ifs.bindNextTourToMutatorIconClick()"></div>-->
-  <!--</li>-->
-  <!--<li data-id="tip-mod-circle2" data-button="Seuraava" class="wide" data-options="prev_button: true; tip_location: right;">-->
-    <!--<p>Näiden avulla pystyt muokkaamaan palikan ominaisuuksia. Kokeile lisätä ympyrälle sijainti.</p>-->
-    <!--<div class="after-step-method" style="display:none" data-exec="Exercises.hideBubbles()"></div>-->
-  <!--</li>-->
-  <!--<li data-id="tip-coordinates" data-button="Seuraava" class="wide" data-options="prev_button: true; tip_location: right;">-->
-    <!--<p>Sijainnin pystyy määrittelemään tällä palikalla.</p>-->
-    <!--<p>Pudotusvalikosta pystyt valitsemaan X- ja Y-koordinaatit. Kokeile eri arvoja niin näet miten se toimii.</p>-->
-  <!--</li>-->
-  <li data-button="OK" class="wide" data-options="prev_button: true">
-    <h2>Tehtävä:</h2>
-    <p>Täydennä ohjelma toimimaan sen mukaisesti mitä käyttäjä vastaa kysymykseen (jos käyttäjä vastaa "neliö", piirretään neliö ja jos vastataan "ympyrä", piirretään ympyrä).</p>
-  </li>
-  <li data-button="OK" class="wide" data-options="prev_button: true">
-    <p><strong>Bonus:</strong> tämän tehtävän voi tehdä käyttäen useampaa ehtolauseita, mutta jos haluaa haastetta, voi myös kokeilla miten ehtolausetta pystyy muokkaamaan (sen kyljessä olevaa tähteä klikkaamalla)</p>
-  </li>
-</ol>
-<div id="evaluation-selects">
-  <div>Sain ohjelman toimimaan käyttäjän vastauksen mukaisesti.</div>
-  <div>Käytin ehtolauseessani "muuten jos"- ja "muuten"-haaroja.</div>
-  <div>Onnistuin muokkaamaan ympyrän tai neliön sijaintia.</div>
-</div>
-#}

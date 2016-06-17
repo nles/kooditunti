@@ -1,0 +1,59 @@
+<xml>
+    <block type="circle_element" id="12" inline="false" x="52" y="19">
+        <mutation properties="position"/>
+        <field name="name">ball</field>
+        <value name="position_mutator">
+            <block type="coordinate_array_simple" id="29">
+                <field name="xpos">7</field>
+                <field name="ypos">6</field>
+            </block>
+        </value>
+    </block>
+    <block type="variables_set" id="14" inline="true" x="50" y="96">
+        <field name="VAR">clicks</field>
+        <value name="VALUE">
+            <block type="math_number" id="15">
+                <field name="NUM">0</field>
+            </block>
+        </value>
+    </block>
+    <block type="when_clicked" id="16" x="50" y="161">
+        <field name="element">ball</field>
+        <statement name="when">
+            <block type="variables_set" id="17" inline="true">
+                <field name="VAR">clicks</field>
+                <value name="VALUE">
+                    <block type="math_arithmetic" id="18" inline="true">
+                        <field name="OP">ADD</field>
+                        <value name="A">
+                            <block type="variables_get" id="19">
+                                <field name="VAR">clicks</field>
+                            </block>
+                        </value>
+                        <value name="B">
+                            <block type="math_number" id="20">
+                                <field name="NUM">1</field>
+                            </block>
+                        </value>
+                    </block>
+                </value>
+                <next>
+                    <block type="text_element" id="21" inline="false">
+                        <mutation properties="position"/>
+                        <value name="text">
+                            <block type="variables_get" id="22">
+                                <field name="VAR">clicks</field>
+                            </block>
+                        </value>
+                        <value name="position_mutator">
+                            <block type="coordinate_array_simple" id="33">
+                                <field name="xpos">10</field>
+                                <field name="ypos">6</field>
+                            </block>
+                        </value>
+                    </block>
+                </next>
+            </block>
+        </statement>
+    </block>
+</xml>

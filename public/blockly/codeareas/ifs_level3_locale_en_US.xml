@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<xml>
+  <block type="variables_set" id="44" inline="true" x="55" y="53">
+    <field name="VAR">direction</field>
+    <value name="VALUE">
+      <block type="text" id="45">
+        <field name="TEXT">up</field>
+      </block>
+    </value>
+    <next>
+      <block type="controls_repeat_ext" id="46" inline="true">
+        <value name="TIMES">
+          <block type="math_number" id="47">
+            <field name="NUM">10</field>
+          </block>
+        </value>
+        <statement name="DO">
+          <block type="controls_if" id="48" inline="false">
+            <value name="IF0">
+              <block type="in_special_location" id="49"/>
+            </value>
+            <next>
+              <block type="controls_if" id="50" inline="false">
+                <value name="IF0">
+                  <block type="logic_compare" id="51" inline="true">
+                    <field name="OP">EQ</field>
+                    <value name="A">
+                      <block type="variables_get" id="52">
+                        <field name="VAR">direction</field>
+                      </block>
+                    </value>
+                    <value name="B">
+                      <block type="text" id="53">
+                        <field name="TEXT">up</field>
+                      </block>
+                    </value>
+                  </block>
+                </value>
+                <statement name="DO0">
+                  <block type="move_right" id="54">
+                    <next>
+                      <block type="move_up" id="55"/>
+                    </next>
+                  </block>
+                </statement>
+                <next>
+                  <block type="controls_if" id="56" inline="false">
+                    <value name="IF0">
+                      <block type="logic_compare" id="57" inline="true">
+                        <field name="OP">EQ</field>
+                        <value name="A">
+                          <block type="variables_get" id="58">
+                            <field name="VAR">direction</field>
+                          </block>
+                        </value>
+                        <value name="B">
+                          <block type="text" id="59">
+                            <field name="TEXT">down</field>
+                          </block>
+                        </value>
+                      </block>
+                    </value>
+                  </block>
+                </next>
+              </block>
+            </next>
+          </block>
+        </statement>
+      </block>
+    </next>
+  </block>
+</xml>

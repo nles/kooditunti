@@ -1,0 +1,14 @@
+<xml id="toolbox" style="display: none">
+  <category name="Elements">
+    <block type="text_element"></block>
+    <block type="circle_element">
+      <field name="name">ball</field>
+    </block>
+  </category>
+  <category name="Numbers">
+    <block type="math_number">
+      <field name="NUM">50</field>
+    </block>
+    <block type="math_arithmetic"></block>
+  </category>
+</xml>

@@ -1,0 +1,37 @@
+<xml id="toolbox" style="display: none">
+  <category name="Code blocks">
+    <block type="text_element">
+      <mutation properties="position"></mutation>
+      <value name="text">
+        <block type="text">
+          <field name="TEXT">Hello World!</field>
+        </block>
+      </value>
+    </block>
+    <block type="small_circle_element">
+      <field name="name">ball1</field>
+      <mutation properties="position"></mutation>
+    </block>
+    <block type="medium_circle_element">
+      <field name="name">ball2</field>
+      <mutation properties="position"></mutation>
+    </block>
+    <block type="big_circle_element">
+      <field name="name">ball3</field>
+      <mutation properties="position"></mutation>
+    </block>
+    <!--<block type="coordinate_array_simple"></block>-->
+    <block type="coordinate_array">
+      <value name="xcoord">
+        <block type="math_number">
+          <field name="NUM">6</field>
+        </block>
+      </value>
+      <value name="ycoord">
+        <block type="math_number">
+          <field name="NUM">6</field>
+        </block>
+      </value>
+    </block>
+  </category>
+</xml>
