@@ -265,8 +265,21 @@ exports.saveRating = (req, res) ->
   new er(
     eid: req.body.eid
     rating: req.body.rating
+    locale: config['locale']
+    date: new Date()
   ).save (err, comment, count) ->
     return
 
   res.send ""
 
+exports.getRatings = (req, res) ->
+  # quick and dirty...
+  # (this is not controller stuff)
+  er = mongoose.model('ExerciseRating')
+  er.find {}, (err, results) ->
+    console.log(err)
+    ratings = []
+    results.forEach (r) ->
+      ratings.push { eid:r.eid, rating:r.rating, locale:r.locale, date:r.date }
+
+    res.json(ratings)

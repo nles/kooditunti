@@ -2,38 +2,51 @@
   position: relative;
   overflow: hidden;
   height: 100%; }
+
 #survey-page .step {
   position: absolute;
   top: 0;
   left: -1000px;
   transition: 0.5s;
   width: 50%; }
+
 #survey-page .step.next {
   left: 1000px; }
+
 #survey-page .step.current {
   left: 25%; }
+
 #survey-page label {
   font-size: 18px; }
+
 #survey-page input {
   margin-right: 10px; }
+
 #survey-page .question {
   margin-bottom: 25px; }
+
 #survey-page a.prev {
   position: absolute;
   bottom: 0;
   font-size: 12px; }
+
 #survey-page button.next {
   float: right;
   margin: 0; }
+
 #survey-page .thanks {
   text-align: center;
   font-size: 45px; }
+
 #survey-page .range {
   margin-bottom: 20px;
   overflow: hidden; }
+
 #survey-page .range .slider {
   width: auto; }
+
 #survey-page .range .texts .lou {
   float: left; }
+
 #survey-page .range .texts .hai {
   float: right; }
